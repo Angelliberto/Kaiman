@@ -1,0 +1,64 @@
+{
+  "hostName": "KAIMAN",
+  "hostTagline": "Turismo en Venezuela",
+  "listings": [
+    {
+      "id": "villa-brisa-marina",
+      "destinationId": "isla-de-margarita",
+      "name": "Villa Brisa Marina",
+      "location": "Pampatar, Margarita, Venezuela",
+      "description": "Villa frente al mar con piscina privada. Ideal para familias.",
+      "imageUrl": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "maxGuests": 6,
+      "airbnbListingUrl": "https://www.airbnb.com/rooms/EJEMPLO_1",
+      "airbnbIcalUrl": "",
+      "blockedDates": [
+        "2026-08-15",
+        "2026-08-16",
+        "2026-08-17",
+        "2026-08-22",
+        "2026-08-23",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03"
+      ]
+    },
+    {
+      "id": "apartamento-el-yaque",
+      "destinationId": "isla-de-margarita",
+      "name": "Apartamento El Yaque Surf",
+      "location": "El Yaque, Margarita, Venezuela",
+      "description": "A pasos de la playa de kitesurf. Perfecto para parejas.",
+      "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef10d936f?w=800",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "maxGuests": 4,
+      "airbnbListingUrl": "https://www.airbnb.com/rooms/EJEMPLO_2",
+      "airbnbIcalUrl": "",
+      "blockedDates": [
+        "2026-08-14",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-30"
+      ]
+    },
+    {
+      "id": "casa-playa-el-agua",
+      "destinationId": "isla-de-margarita",
+      "name": "Casa Playa El Agua",
+      "location": "Playa El Agua, Margarita, Venezuela",
+      "description": "Casa acogedora a poca distancia de la playa.",
+      "imageUrl": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "maxGuests": 5,
+      "airbnbListingUrl": "https://www.airbnb.com/rooms/EJEMPLO_3",
+      "airbnbIcalUrl": "",
+      "blockedDates": []
+    }
+  ]
+}

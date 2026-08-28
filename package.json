@@ -1,0 +1,13 @@
+{
+  "name": "kaiman",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Sitio web del anfitrión con hospedajes y disponibilidad",
+  "scripts": {
+    "dev:back": "npm run dev --prefix back",
+    "dev:front": "npm run dev --prefix front",
+    "build:back": "npm run build --prefix back",
+    "build:front": "npm run build --prefix front",
+    "build": "npm run build:back && npm run build:front"
+  }
+}

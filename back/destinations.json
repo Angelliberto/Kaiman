@@ -1,0 +1,94 @@
+{
+  "destinations": [
+    {
+      "id": "roraima",
+      "name": "Roraima",
+      "region": "Gran Sabana, Bolívar",
+      "tagline": "El tepuy del mundo perdido",
+      "description": "Monte Roraima es uno de los tepuyes más icónicos de Venezuela: una meseta de mil millones de años, selva, sabanas y un paisaje que parece de otro planeta.",
+      "longDescription": "El trekking a la cima de Roraima cruza la Gran Sabana, ríos de aguas negras y acantilados verticales. Arriba hay formaciones de piedra, piscinas naturales y una flora que no existe en ningún otro lugar. Es la expedición clásica para quien busca naturaleza extrema y silencio.",
+      "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400",
+      "highlights": [
+        "Ascenso de 2 días hasta la cima del tepuy",
+        "Campamento en la meseta con vistas al amanecer",
+        "Formaciones de piedra y valles de cristales",
+        "Comunidades pemón en la Gran Sabana"
+      ],
+      "bestSeason": "Diciembre a marzo (menos lluvia)",
+      "typicalDuration": "6 a 8 días",
+      "howToGetThere": "Vuelo o tierra hasta Santa Elena de Uairén / San Francisco de Yuruaní, y luego trekking con guía."
+    },
+    {
+      "id": "salto-angel",
+      "name": "Salto Ángel",
+      "region": "Parque Nacional Canaima",
+      "tagline": "La cascada más alta del mundo",
+      "description": "Kerepakupai Merú —el Salto Ángel— cae 979 metros desde el Auyantepuy. Llegar es parte de la aventura: laguna, curiara y selva hasta el mirador.",
+      "longDescription": "Desde Canaima se navega el río Carrao y el Churún entre tepuyes y selva. El último tramo es una caminata corta hasta la base de la caída. En temporada de lluvias el salto es una cortina inmensa; en sequía se ve más la pared de roca y el hilo de agua. Es el ícono natural de Venezuela.",
+      "imageUrl": "https://images.unsplash.com/photo-1432405972471-1d8f8aa4d1c2?w=1400",
+      "highlights": [
+        "Cascada de 979 m desde el Auyantepuy",
+        "Navegación en curiara por ríos de aguas negras",
+        "Vista desde el mirador de la base",
+        "Sobrevolar el salto en avioneta (opcional)"
+      ],
+      "bestSeason": "Mayo a noviembre (más caudal)",
+      "typicalDuration": "3 a 4 días desde Canaima",
+      "howToGetThere": "Vuelo a Canaima y excursión fluvial de uno o dos días hasta el salto."
+    },
+    {
+      "id": "canaima",
+      "name": "Canaima",
+      "region": "Parque Nacional Canaima, Bolívar",
+      "tagline": "Laguna, tepuyes y cultura pemón",
+      "description": "Canaima es la puerta al parque: laguna de arena rosada, saltos Hacha y Ucaima, y la cultura pemón a orillas de la selva.",
+      "longDescription": "La laguna de Canaima concentra varios saltos que caen directo al agua. Se recorre en curiara, se camina por playas de arena rosada y se visita la comunidad. Desde aquí salen las expediciones al Salto Ángel y a otros tepuyes. Es el campamento base del sur de Venezuela.",
+      "imageUrl": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400",
+      "highlights": [
+        "Laguna de Canaima y playas de arena rosada",
+        "Saltos Hacha, Ucaima y Golondrina",
+        "Paseos en curiara al atardecer",
+        "Encuentro con la cultura pemón"
+      ],
+      "bestSeason": "Todo el año; más agua de mayo a noviembre",
+      "typicalDuration": "3 a 5 días",
+      "howToGetThere": "Vuelo charter o regular a Canaima desde Ciudad Bolívar o Puerto Ordaz."
+    },
+    {
+      "id": "los-roques",
+      "name": "Los Roques",
+      "region": "Dependencias Federales",
+      "tagline": "El Caribe más claro de Venezuela",
+      "description": "Un archipiélago de arena blanca, agua turquesa y cayos casi vírgenes. Ideal para snorkel, buceo, kitesurf y descanso.",
+      "longDescription": "El Parque Nacional Archipiélago Los Roques protege arrecifes, manglares y playas de postal. Gran Roque es el pueblo; desde ahí se sale en peñero a Cayo de Agua, Francisquí, Madrisquí o Crasquí. El ritmo es lento: mar, pescado fresco y atardeceres. Es el destino de playa más exclusivo del país.",
+      "imageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1400",
+      "highlights": [
+        "Cayo de Agua y sus dos playas unidas",
+        "Snorkel y buceo en arrecifes protegidos",
+        "Paseos en peñero entre cayos",
+        "Pueblo de Gran Roque al atardecer"
+      ],
+      "bestSeason": "Diciembre a mayo (viento y cielo despejado)",
+      "typicalDuration": "3 a 5 días",
+      "howToGetThere": "Vuelo a Gran Roque desde Caracas (Maiquetía) o Valencia."
+    },
+    {
+      "id": "isla-de-margarita",
+      "name": "Isla de Margarita",
+      "region": "Nueva Esparta",
+      "tagline": "Playas, pueblo y hospedajes con disponibilidad",
+      "description": "La perla del Caribe venezolano: El Yaque, Playa El Agua, Pampatar y Pueblos del interior. Aquí puedes ver hospedajes y fechas reales.",
+      "longDescription": "Margarita combina playas para kitesurf, calas tranquilas, fuertes coloniales y vida de pueblo. En este módulo mostramos los hospedajes del anfitrión con calendario sincronizado desde Airbnb, para que veas qué fechas están libres antes de reservar.",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400",
+      "highlights": [
+        "Playa El Agua y El Yaque (kitesurf)",
+        "Pampatar, Porlamar y Juan Griego",
+        "Hospedajes con disponibilidad en vivo",
+        "Reserva directa en Airbnb"
+      ],
+      "bestSeason": "Todo el año; más brisa de diciembre a abril",
+      "typicalDuration": "4 a 7 días",
+      "howToGetThere": "Vuelo a Porlamar (PMV) o ferry desde Puerto La Cruz / Cumaná."
+    }
+  ]
+}
