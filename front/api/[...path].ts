@@ -29,7 +29,7 @@ export default async function handler(request: Request): Promise<Response> {
   const apiBase = resolveApiBase(process.env.API_URL);
 
   if (!apiBase) {
-    return Response.json({ error: 'API_URL not configured or invalid' }, { status: 503 });
+    return Response.json({ error: 'API_URL not configured' }, { status: 503 });
   }
 
   const incoming = new URL(request.url);
@@ -37,9 +37,7 @@ export default async function handler(request: Request): Promise<Response> {
   const target = new URL(`/api/${path}`, apiBase);
 
   incoming.searchParams.forEach((value, key) => {
-    if (key !== 'path' && key !== '...path') {
-      target.searchParams.set(key, value);
-    }
+    target.searchParams.set(key, value);
   });
 
   const headers = new Headers();
