@@ -8,17 +8,17 @@ import type { Destination, SiteInfo } from '../types';
 const FEATURES = [
   {
     title: 'Destinos icónicos',
-    text: 'Roraima, Salto Ángel, Canaima, Los Roques y Margarita en un solo lugar.',
+    text: 'Lo ultimo del gran escandalo, homero simpson cubierto en una bolsa de oxigeno que segun el le da PODERES SEXUALES',
     tone: 'green',
   },
   {
-    title: 'Experiencias reales',
-    text: 'Información práctica: mejor época, duración y cómo llegar a cada destino.',
+    title: 'Experiencias Unicas',
+    text: '-Homero aqui hay una familia de Zariweyas - A la grande le puse Cuca',
     tone: 'orange',
   },
   {
-    title: 'Hospedajes en vivo',
-    text: 'En la isla de Margarita consulta disponibilidad sincronizada antes de reservar en Airbnb.',
+    title: 'Hospedajes',
+    text: 'Trabajo muy duro como un esclavo y ya no ay ya se me olvido todo bueno paguenme dinero',
     tone: 'rose',
   },
 ];
@@ -41,7 +41,7 @@ export function HomePage() {
   }, []);
 
   useEffect(() => {
-    if (!location.hash) return;
+    if (!location.hash || location.hash === '#contacto') return;
 
     const id = location.hash.replace('#', '');
     requestAnimationFrame(() => {
@@ -108,18 +108,6 @@ export function HomePage() {
         <DestinationsCarousel destinations={destinations} />
       </section>
 
-      <section className="promo-banner">
-        <div>
-          <p className="section-kicker light">Isla de Margarita</p>
-          <h2>Hospedajes con calendario en tiempo real</h2>
-          <p>
-            Consulta qué alojamientos están libres hoy y reserva directamente en Airbnb.
-          </p>
-        </div>
-        <Link to="/destino/isla-de-margarita" className="btn btn-cta">
-          Ver disponibilidad
-        </Link>
-      </section>
     </div>
   );
 }

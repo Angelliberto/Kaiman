@@ -11,6 +11,7 @@ import {
   getSite,
   reloadListings,
 } from '../controllers/listingsController';
+import { postContact } from '../controllers/contactController';
 
 const router = Router();
 
@@ -22,5 +23,6 @@ router.get('/listings', getListings);
 router.get('/listings/:id', getListing);
 router.get('/listings/:id/availability', getAvailability);
 router.post('/listings/reload', reloadListings);
+router.post('/contact', postContact);
 
 export default router;

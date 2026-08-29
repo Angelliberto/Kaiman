@@ -2,8 +2,8 @@ import type { Destination, HostListing, ListingAvailability, SiteInfo } from '..
 
 const API_BASE = import.meta.env.VITE_API_URL ?? '/api';
 
-async function request<T>(path: string): Promise<T> {
-  const response = await fetch(`${API_BASE}${path}`);
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(`${API_BASE}${path}`, init);
 
   if (!response.ok) {
     const body = await response.json().catch(() => ({}));
@@ -12,6 +12,20 @@ async function request<T>(path: string): Promise<T> {
 
   return response.json();
 }
+
+export type ContactPayload = {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+};
+
+export const submitContact = (payload: ContactPayload): Promise<{ ok: boolean }> =>
+  request('/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
 
 export const fetchSiteInfo = (): Promise<SiteInfo> => request('/site');
 

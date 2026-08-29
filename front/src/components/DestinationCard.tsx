@@ -12,16 +12,21 @@ export function DestinationCard({ destination }: DestinationCardProps) {
 
   return (
     <article className="destination-card-ravelo">
-      <Link to={`/destino/${destination.id}`} className="destination-card-media">
+      <div className="destination-card-media">
         <ImageCarousel
           images={images}
           alt={destination.name}
           intervalMs={4000}
         />
+        <Link
+          to={`/destino/${destination.id}`}
+          className="destination-card-media-link"
+          aria-label={`Ver ${destination.name}`}
+        />
         {destination.listingCount > 0 && (
           <span className="destination-price-tag">{destination.listingCount} hospedajes</span>
         )}
-      </Link>
+      </div>
 
       <div className="destination-card-body">
         <span className="destination-region">{destination.region}</span>

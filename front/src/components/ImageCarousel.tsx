@@ -1,10 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { MouseEvent, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { FiMaximize2 } from 'react-icons/fi';
+import { ImageGallery } from './ImageGallery';
 
 interface ImageCarouselProps {
   images: string[];
   alt: string;
   intervalMs?: number;
   className?: string;
+  enableGallery?: boolean;
+  showGalleryTrigger?: boolean;
+  onGalleryReady?: (openGallery: (() => void) | null) => void;
 }
 
 const shuffle = <T,>(items: T[]): T[] => {
@@ -30,6 +35,9 @@ export function ImageCarousel({
   alt,
   intervalMs = 4500,
   className = '',
+  enableGallery = true,
+  showGalleryTrigger = true,
+  onGalleryReady,
 }: ImageCarouselProps) {
   const slidesKey = useMemo(() => images.filter(Boolean).join('|'), [images]);
   const slides = useMemo(() => shuffle(images.filter(Boolean)), [slidesKey]);
@@ -38,7 +46,30 @@ export function ImageCarousel({
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
   const [paused, setPaused] = useState(false);
   const [motionReady, setMotionReady] = useState(false);
+  const [galleryOpen, setGalleryOpen] = useState(false);
   const isFirstRender = useRef(true);
+
+  const openGallery = useCallback((event?: MouseEvent<HTMLButtonElement>) => {
+    event?.preventDefault();
+    event?.stopPropagation();
+    setPaused(true);
+    setGalleryOpen(true);
+  }, []);
+
+  const closeGallery = () => {
+    setGalleryOpen(false);
+    setPaused(false);
+  };
+
+  useLayoutEffect(() => {
+    if (!enableGallery) {
+      onGalleryReady?.(null);
+      return;
+    }
+
+    onGalleryReady?.(() => openGallery());
+    return () => onGalleryReady?.(null);
+  }, [enableGallery, onGalleryReady, openGallery]);
 
   useEffect(() => {
     setIndex(0);
@@ -90,6 +121,17 @@ export function ImageCarousel({
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+      {enableGallery && showGalleryTrigger && (
+        <button
+          type="button"
+          className="carousel-gallery-trigger"
+          aria-label="Ver galería en pantalla completa"
+          onClick={openGallery}
+        >
+          <FiMaximize2 aria-hidden="true" />
+        </button>
+      )}
+
       {slides.map((src, slideIndex) => {
         const isActive = slideIndex === index;
         const isLeaving = slideIndex === prevIndex;
@@ -114,6 +156,15 @@ export function ImageCarousel({
           />
         );
       })}
+
+      {galleryOpen && (
+        <ImageGallery
+          images={slides}
+          alt={alt}
+          initialIndex={index}
+          onClose={closeGallery}
+        />
+      )}
     </div>
   );
 }
