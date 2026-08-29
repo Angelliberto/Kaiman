@@ -101,7 +101,7 @@ export function HomePage() {
           <p className="section-kicker">Destinos populares</p>
           <h2>Explora los mejores lugares de Venezuela</h2>
           <p className="section-subtitle">
-            Cada módulo tiene galería rotativa, guía de viaje y contenido pensado para turistas.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
           </p>
         </div>
 
