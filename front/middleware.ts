@@ -1,7 +1,3 @@
-export const config = {
-  runtime: 'edge',
-};
-
 const SKIP_HEADERS = new Set([
   'host',
   'connection',
@@ -25,7 +21,11 @@ function resolveApiBase(raw?: string): URL | null {
   }
 }
 
-export default async function handler(request: Request): Promise<Response> {
+export const config = {
+  matcher: '/api/:path*',
+};
+
+export default async function middleware(request: Request): Promise<Response> {
   const apiBase = resolveApiBase(process.env.API_URL);
 
   if (!apiBase) {
