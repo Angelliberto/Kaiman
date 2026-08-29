@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { fetchDestinations, fetchSiteInfo } from '../api/client';
 import { DestinationsCarousel } from '../components/DestinationsCarousel';
 import { ImageCarousel } from '../components/ImageCarousel';

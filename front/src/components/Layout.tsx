@@ -4,6 +4,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa6';
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { fetchSiteInfo } from '../api/client';
 import { ContactToggle } from './ContactToggle';
+import { ScrollToTop } from './ScrollToTop';
 import type { SiteInfo } from '../types';
 
 const LOGO_SRC = '/images/logo/kaiman logo_logo.png';
@@ -42,6 +43,7 @@ export function Layout() {
 
   return (
     <div className="app-shell">
+      <ScrollToTop />
       <header className="topbar">
         <div className="topbar-inner">
           <NavLink to="/" className="brand">
