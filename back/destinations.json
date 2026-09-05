@@ -5,90 +5,339 @@
       "name": "Roraima",
       "region": "Gran Sabana, Bolívar",
       "tagline": "El tepuy del mundo perdido",
-      "description": "Monte Roraima es uno de los tepuyes más icónicos de Venezuela: una meseta de mil millones de años, selva, sabanas y un paisaje que parece de otro planeta.",
-      "longDescription": "El trekking a la cima de Roraima cruza la Gran Sabana, ríos de aguas negras y acantilados verticales. Arriba hay formaciones de piedra, piscinas naturales y una flora que no existe en ningún otro lugar. Es la expedición clásica para quien busca naturaleza extrema y silencio.",
+      "description": "Una de las formaciones geológicas más antiguas y místicas de la Tierra: el tepuy más alto y famoso del Parque Nacional Canaima. En lengua pemón, Roroimö —«la gran montaña verdeazulada».",
+      "longDescription": "Salimos todas las semanas del año desde San Francisco de Yuruaní y Puerto Ordaz. No necesitas armar grupo: puedes unirte a cualquier salida. Financiamiento por cuotas flexibles hasta la fecha de tu expedición, y ofertas para parejas o grupos. Elige entre tres itinerarios: 6D/5N, 7D/6N u 8D/7N.",
       "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400",
       "highlights": [
-        "Ascenso de 2 días hasta la cima del tepuy",
-        "Campamento en la meseta con vistas al amanecer",
-        "Formaciones de piedra y valles de cristales",
-        "Comunidades pemón en la Gran Sabana"
+        "Salidas semanales todo el año · únete sin grupo propio",
+        "Tres itinerarios: 6, 7 u 8 días en la Gran Sabana",
+        "Cumbre a 2.800 m: Valle de los Cuarzos, Jacuzzis, Maverick Rock",
+        "Financiamiento por cuotas y ofertas para parejas o grupos"
       ],
-      "bestSeason": "Diciembre a marzo (menos lluvia)",
-      "typicalDuration": "6 a 8 días",
-      "howToGetThere": "Vuelo o tierra hasta Santa Elena de Uairén / San Francisco de Yuruaní, y luego trekking con guía."
+      "bestSeason": "Todo el año; diciembre a marzo suele tener menos lluvia",
+      "typicalDuration": "6 a 8 días (5 a 7 noches)",
+      "howToGetThere": "Punto de partida: San Francisco de Yuruaní o Puerto Ordaz. Trekking desde Paraitepuy con chequeo en INPARQUES.",
+      "offers": [
+        {
+          "title": "Expediciones Roraima Tepuy",
+          "subtitle": "Salidas semanales · congela el precio hoy y paga en cuotas",
+          "highlight": "3 itinerarios",
+          "packages": [
+            {
+              "name": "6 días / 5 noches",
+              "price": "",
+              "unit": "itinerario clásico",
+              "badge": "6D / 5N",
+              "includes": [
+                "Ascenso a la cumbre por La Rampa y noche en «hotel» (cueva de roca)",
+                "Recorrido de cumbre: Valle de los Cuarzos, Jacuzzis, Ventana de Kukenan y Maverick Rock (2.800 m)",
+                "Día de exploración sin mochila: Grieta, Ojos de Cristal, Guácharo, Salto Catedral y Abismo",
+                "Descenso vía campamento base y río Tek · regreso a San Francisco de Yuruaní"
+              ]
+            },
+            {
+              "name": "7 días / 6 noches",
+              "price": "",
+              "unit": "más tiempo en cumbre",
+              "badge": "7D / 6N",
+              "includes": [
+                "Misma ruta de acceso y ascenso a la cumbre",
+                "Dos jornadas de exploración en la meseta (punto triple, fosa, Valle de los Cristales, Ojos de Cristal, Abismo, Campo de Golf)",
+                "Descenso a campamento base y río Tek",
+                "Noche final en posada en San Francisco de Yuruaní"
+              ]
+            },
+            {
+              "name": "8 días / 7 noches",
+              "price": "",
+              "unit": "ruta ampliada a La Proa",
+              "badge": "8D / 7N",
+              "includes": [
+                "Todo lo del programa largo en cumbre",
+                "Campamento en lado Brasil (hotel Qoati) y paso por el punto triple",
+                "Excursión a La Proa vía lago Gladys y río Cotinga, con descenso en cuerdas (tramo sencillo)",
+                "Regreso por el sur del tepuy, descenso a río Tek y noche en posada en Yuruaní"
+              ]
+            }
+          ],
+          "extrasTitle": "Incluye y condiciones",
+          "extras": [
+            "Desayunos, meriendas, almuerzos y cenas según itinerario (comida sencilla de trekking)",
+            "Guías en ruta; chequeo INPARQUES el día 1",
+            "Financiamiento por cuotas flexibles hasta la fecha de la expedición",
+            "Ofertas especiales para parejas o grupos"
+          ],
+          "conditions": [
+            "Salidas todas las semanas del año desde San Francisco de Yuruaní y Puerto Ordaz",
+            "Puedes unirte a cualquier salida; no es necesario armar grupo propio",
+            "Recorridos en cumbre sujetos a condición física del grupo y al clima",
+            "Consulta fechas, cupos y tarifas vigentes por WhatsApp"
+          ],
+          "contactWhatsApp": "584249055466"
+        }
+      ]
     },
     {
       "id": "salto-angel",
       "name": "Salto Ángel",
       "region": "Parque Nacional Canaima",
       "tagline": "La cascada más alta del mundo",
-      "description": "Kerepakupai Merú —el Salto Ángel— cae 979 metros desde el Auyantepuy. Llegar es parte de la aventura: laguna, curiara y selva hasta el mirador.",
-      "longDescription": "Desde Canaima se navega el río Carrao y el Churún entre tepuyes y selva. El último tramo es una caminata corta hasta la base de la caída. En temporada de lluvias el salto es una cortina inmensa; en sequía se ve más la pared de roca y el hilo de agua. Es el ícono natural de Venezuela.",
+      "description": "Kerepakupai Merú —el Salto Ángel— cae 979 m desde el Auyantepuy. Únete a una expedición real: selva densa, tepuyes, naturaleza intacta y paisajes únicos. El ícono de Venezuela y uno de los grandes destinos de Sudamérica.",
+      "longDescription": "Nuestro programa está enfocado en naturaleza y aventura, lejos de los senderos turísticos estándar. Salidas los domingos con regreso los jueves: 2 noches frente al Salto Ángel, 1 noche en comunidad local y 1 noche en lodge básico en la Laguna de Canaima. Grupos de mínimo 8 y máximo 12 participantes. Los vuelos salen y regresan solo desde Caracas.",
       "imageUrl": "https://images.unsplash.com/photo-1432405972471-1d8f8aa4d1c2?w=1400",
       "highlights": [
         "Cascada de 979 m desde el Auyantepuy",
-        "Navegación en curiara por ríos de aguas negras",
-        "Vista desde el mirador de la base",
-        "Sobrevolar el salto en avioneta (opcional)"
+        "Expedición de 5 días / 4 noches (domingo a jueves)",
+        "Navegación en curiara, trekking a mirador Laime y Kuravaina",
+        "Guías profesionales en español e inglés · grupos de 8 a 12"
       ],
-      "bestSeason": "Mayo a noviembre (más caudal)",
-      "typicalDuration": "3 a 4 días desde Canaima",
-      "howToGetThere": "Vuelo a Canaima y excursión fluvial de uno o dos días hasta el salto."
-    },
-    {
-      "id": "canaima",
-      "name": "Canaima",
-      "region": "Parque Nacional Canaima, Bolívar",
-      "tagline": "Laguna, tepuyes y cultura pemón",
-      "description": "Canaima es la puerta al parque: laguna de arena rosada, saltos Hacha y Ucaima, y la cultura pemón a orillas de la selva.",
-      "longDescription": "La laguna de Canaima concentra varios saltos que caen directo al agua. Se recorre en curiara, se camina por playas de arena rosada y se visita la comunidad. Desde aquí salen las expediciones al Salto Ángel y a otros tepuyes. Es el campamento base del sur de Venezuela.",
-      "imageUrl": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400",
-      "highlights": [
-        "Laguna de Canaima y playas de arena rosada",
-        "Saltos Hacha, Ucaima y Golondrina",
-        "Paseos en curiara al atardecer",
-        "Encuentro con la cultura pemón"
-      ],
-      "bestSeason": "Todo el año; más agua de mayo a noviembre",
-      "typicalDuration": "3 a 5 días",
-      "howToGetThere": "Vuelo charter o regular a Canaima desde Ciudad Bolívar o Puerto Ordaz."
+      "bestSeason": "Mayo a noviembre (mayor caudal); consulta el calendario de salidas",
+      "typicalDuration": "5 días / 4 noches (domingo a jueves)",
+      "howToGetThere": "Vuelos Caracas–Canaima–Caracas (Embraer 190, Cessna 206 u otras aeronaves). Traslados en curiaras de madera con motor fuera de borda.",
+      "offers": [
+        {
+          "title": "Expedición Salto Ángel 5 días",
+          "subtitle": "Salida domingo · regreso jueves · naturaleza y aventura",
+          "highlight": "Desde USD 830",
+          "packages": [
+            {
+              "name": "Programa completo",
+              "price": "USD 830–890",
+              "unit": "persona · reserva anticipada = mejor tarifa",
+              "badge": "8–12 personas",
+              "includes": [
+                "2 noches frente al Salto Ángel",
+                "1 noche en comunidad local",
+                "1 noche en lodge básico en Laguna de Canaima",
+                "Vuelos Caracas–Canaima–Caracas",
+                "Traslados en curiara, comidas según itinerario y guías profesionales (ES/EN)"
+              ]
+            }
+          ],
+          "extrasTitle": "Qué incluye y qué no",
+          "extras": [
+            "Incluye: vuelos a Canaima, traslados en curiara, alojamiento según noches del programa, comidas indicadas (B/L/D) y guías profesionales",
+            "No incluye: entrada al Parque Nacional Canaima (USD 40 por persona)",
+            "Comida sencilla y muy buena; avisa con anticipación si eres vegetariano o tienes necesidades dietéticas",
+            "Alojamiento: hamacas en campamento / comunidad y posada local con habitaciones y baño privado en Laguna de Canaima (noche 4)"
+          ],
+          "conditions": [
+            "Salidas solo los domingos; regreso los jueves",
+            "Mínimo 8 y máximo 12 participantes por salida",
+            "Vuelos únicamente desde y hacia Caracas",
+            "El día 5 no incluye cena (fin de servicios tras el desayuno y el vuelo de regreso)"
+          ],
+          "contactWhatsApp": "584249055466"
+        }
+      ]
     },
     {
       "id": "los-roques",
       "name": "Los Roques",
       "region": "Dependencias Federales",
-      "tagline": "El Caribe más claro de Venezuela",
-      "description": "Un archipiélago de arena blanca, agua turquesa y cayos casi vírgenes. Ideal para snorkel, buceo, kitesurf y descanso.",
-      "longDescription": "El Parque Nacional Archipiélago Los Roques protege arrecifes, manglares y playas de postal. Gran Roque es el pueblo; desde ahí se sale en peñero a Cayo de Agua, Francisquí, Madrisquí o Crasquí. El ritmo es lento: mar, pescado fresco y atardeceres. Es el destino de playa más exclusivo del país.",
+      "tagline": "Nadie permanece inmune al encanto de sus paradisíacas arenas",
+      "description": "Cuando se trata de playas, el archipiélago de Los Roques es una de las joyas más preciadas del turismo en Venezuela. En sus 50 cayos y 300 bancos de arena puedes hacer actividades variadas o simplemente relajarte.",
+      "longDescription": "Sus arenas son tan blancas, cálidas y suaves como en las mejores costas del mundo, y sus aguas de infinitos tonos azules solo compiten con el clima tropical perfecto de la zona. En Kaiman Travel diseñamos tu experiencia lejos de los itinerarios estándar, ajustada a lo que realmente buscas en tu viaje.",
       "imageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1400",
       "highlights": [
-        "Cayo de Agua y sus dos playas unidas",
-        "Snorkel y buceo en arrecifes protegidos",
-        "Paseos en peñero entre cayos",
-        "Pueblo de Gran Roque al atardecer"
+        "50 cayos y 300 bancos de arena blanca",
+        "Excursiones a Madrisquí, Francisquí y Cayo de Agua",
+        "Snorkel en arrecifes protegidos (La Virgen en plan Premium)",
+        "Experiencias a medida con Kaiman Travel, sin itinerarios estándar"
       ],
-      "bestSeason": "Diciembre a mayo (viento y cielo despejado)",
-      "typicalDuration": "3 a 5 días",
-      "howToGetThere": "Vuelo a Gran Roque desde Caracas (Maiquetía) o Valencia."
+      "bestSeason": "Temporada Serena: septiembre y octubre (promo Posada Eva). Temporada alta con recargo en feriados y puentes.",
+      "typicalDuration": "3 a 5 noches",
+      "howToGetThere": "Vuelo a Gran Roque. Te asesoramos y gestionamos boletería.",
+      "offer": {
+        "title": "Temporada Serena en Los Roques",
+        "subtitle": "Septiembre y octubre · válido para Posada Eva",
+        "highlight": "-15% OFF en el plan Premium",
+        "packages": [
+          {
+            "name": "Plan Básico",
+            "price": "EUR 135",
+            "unit": "persona × noche",
+            "childRate": "EUR 90 × noche (4 a 16 años; no incluye paseo a los cayos; 15% OFF en cayos cercanos si los adultos ya los tienen contratados)",
+            "includes": [
+              "Pensión completa con bebida de bienvenida (sin desayuno el día de llegada ni almuerzo el día de salida)",
+              "Excursión a Madrisquí y Francisquí, con traslado seguro",
+              "Equipamiento de playa: nevera con almuerzo, hielera, toldos, sillas, toallas, agua, refrescos, frutas, snacks y equipo de snorkel"
+            ]
+          },
+          {
+            "name": "Plan Premium",
+            "price": "EUR 155",
+            "unit": "persona × noche",
+            "badge": "-15% OFF",
+            "childRate": "EUR 95 × noche (4 a 16 años; misma condición de cayos que el plan Básico)",
+            "includes": [
+              "Pensión completa con bebida de bienvenida; almuerzo de salida: hamburguesa de pollo crispy con papas o tostones rellenos de queso",
+              "Incluye Madrisquí, Francisquí y una salida de snorkel a La Virgen (una vez por persona, con video de recuerdo)",
+              "Equipamiento de playa: nevera con almuerzo, hielera, sombrilla, sillas, toallas renovadas a diario, agua, refrescos, frutas y snacks",
+              "Obsequio de un six-pack de cerveza (Zulia o Polar Light en lata)"
+            ]
+          }
+        ],
+          "extras": [
+          "Toldo Pulpo de regalo para grupos de 6+ personas en etapa de preventa",
+          "-10% extra en la excursión a Cayo de Agua (contratada por separado), pagando antes o directamente en la posada",
+          "Boletería: te asesoramos y gestionamos tus vuelos"
+        ],
+        "extrasTitle": "Regalos y descuentos adicionales",
+        "conditions": [
+          "Tarifas comisionables para agencias",
+          "La tarifa de niños no incluye cayos dado el bajo costo de la tarifa",
+          "Temporada alta (Carnavales, Semana Santa, Día del Trabajador, Día de las Madres, feriados y puentes): recargo del 15% sobre la tarifa por persona por noche",
+          "Propuesta culinaria: menú mediterráneo con porciones hoteleras fijas (no es seafood ilimitado). Mariscos y langostas con costo extra",
+          "Check-in: 3:00 PM (hay baños disponibles si llegas antes). Sin planta eléctrica",
+          "No nos responsabilizamos por desinformación de agencias externas o fallas de aerolíneas",
+          "Cervezas, bebidas, comidas, snorkel y platos específicos no son intercambiables según disponibilidad; lo no consumido se da por disfrutado (sin reintegros ni reposiciones)"
+        ],
+        "contactWhatsApp": "584249055466"
+      }
     },
     {
       "id": "isla-de-margarita",
       "name": "Isla de Margarita",
       "region": "Nueva Esparta",
-      "tagline": "Playas, pueblo y hospedajes con disponibilidad",
-      "description": "La perla del Caribe venezolano: El Yaque, Playa El Agua, Pampatar y Pueblos del interior. Aquí puedes ver hospedajes y fechas reales.",
-      "longDescription": "Margarita combina playas para kitesurf, calas tranquilas, fuertes coloniales y vida de pueblo. En este módulo mostramos los hospedajes del anfitrión con calendario sincronizado desde Airbnb, para que veas qué fechas están libres antes de reservar.",
+      "tagline": "La Perla del Caribe te espera",
+      "description": "La Isla de Margarita es, para muchos venezolanos y visitantes extranjeros, la puerta de entrada al Caribe más auténtico. Playas de arena dorada, mar en calma y un ambiente festivo que combina naturaleza, cultura e historia.",
+      "longDescription": "En Kaiman Travel te llevamos allí sin complicaciones, con todo resuelto de principio a fin: boletos, traslados, alojamiento pet friendly o hoteles todo incluido, y excursiones a Cubagua y Coche. Tu única preocupación en la isla es disfrutar.",
       "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400",
       "highlights": [
-        "Playa El Agua y El Yaque (kitesurf)",
-        "Pampatar, Porlamar y Juan Griego",
-        "Hospedajes con disponibilidad en vivo",
-        "Reserva directa en Airbnb"
+        "Playas de arena dorada y mar en calma",
+        "Apartamentos y casas con piscina pet friendly cerca de Playa Guacuco",
+        "Hoteles todo incluido con barra libre y club de playa",
+        "Excursiones en catamarán a Cubagua y Coche"
       ],
       "bestSeason": "Todo el año; más brisa de diciembre a abril",
       "typicalDuration": "4 a 7 días",
-      "howToGetThere": "Vuelo a Porlamar (PMV) o ferry desde Puerto La Cruz / Cumaná."
+      "howToGetThere": "Boletos aéreos Maiquetía–Porlamar ida y vuelta (o desde cualquier punto de Venezuela). También ferry desde Puerto La Cruz / Cumaná.",
+      "offers": [
+        {
+          "title": "Traslado y alojamiento",
+          "subtitle": "Todo resuelto de principio a fin",
+          "packages": [
+            {
+              "name": "Vuelos y movilidad",
+              "price": "",
+              "includes": [
+                "Boletos aéreos Maiquetía–Porlamar, ida y vuelta (o desde cualquier punto de Venezuela)",
+                "Traslados terrestres y alquiler de vehículos durante tu estadía"
+              ]
+            },
+            {
+              "name": "Apartamentos y casas",
+              "price": "",
+              "badge": "Pet friendly",
+              "includes": [
+                "Apartamentos totalmente equipados con piscina",
+                "Casa con piscina a solo 5 minutos de Playa Guacuco",
+                "Todas las opciones son pet friendly"
+              ]
+            },
+            {
+              "name": "Hoteles todo incluido",
+              "price": "",
+              "includes": [
+                "Cóctel de bienvenida a tu llegada",
+                "Piscinas y áreas de actividades para todas las edades",
+                "Buffet: desayuno 7:00–10:00, almuerzo 12:30–15:00, snack 16:00–18:00 y cena 19:00–22:00",
+                "Barra libre de bebidas alcohólicas y no alcohólicas desde las 11:00 a.m.",
+                "Club de playa, parque infantil, wifi en áreas comunes y planta eléctrica"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Excursiones a Cubagua y Coche",
+          "subtitle": "Catamarán a cielo abierto para disfrutar del Caribe con toda su brisa",
+          "packages": [
+            {
+              "name": "Full Day I ❤️ Cubagua",
+              "price": "USD 65",
+              "unit": "adultos",
+              "childRate": "USD 40 niños (4-11 años) · infantes cortesía del capitán",
+              "includes": [
+                "Traslado hotel–muelle–hotel y navegación en catamarán",
+                "Snack de bienvenida y bar nacional abierto (ron, naiguatá, vodka, cerveza Polar, jugos y refrescos)",
+                "Campamento frente al mar con churuatas, almuerzo a base de pescado y postre de frutas",
+                "Recorrido por la zona xerófila, paseo en semisubmarino, vóleibol, fútbol, columpios sobre el mar y animación",
+                "No incluye tasa portuaria ni snorkeling"
+              ]
+            },
+            {
+              "name": "Full Day Cubagua Lodge",
+              "price": "USD 90",
+              "unit": "adultos",
+              "badge": "Premium",
+              "childRate": "USD 50 niños (4-11 años) · infantes cortesía del capitán",
+              "includes": [
+                "Acceso a instalaciones de Cubagua Lodge (terraza y comedor)",
+                "Bar nacional e importado (whisky, vinos y cocteles)",
+                "Almuerzo a base de pescado",
+                "Kayak, paddle board, hamacas, camas sobre el mar, columpio, jacuzzi salado y atención personalizada",
+                "No incluye tasa portuaria"
+              ]
+            },
+            {
+              "name": "Cubagua 24H",
+              "price": "Desde USD 190",
+              "unit": "persona (ocupación doble) · hasta USD 230 ocupación sencilla",
+              "childRate": "Niños USD 150",
+              "includes": [
+                "Día completo con pernocta: transporte terrestre y marítimo",
+                "Alojamiento en habitación matrimonial y pensión completa (snack, almuerzo, cena y desayuno)",
+                "Bar abierto nacional e importado",
+                "Kayak, paddle board, Cubagua Patrimonial, Laguna de Barro, mirador en bote y snorkeling",
+                "No incluye tasa portuaria"
+              ]
+            },
+            {
+              "name": "Cubagua Patrimonial",
+              "price": "USD 53",
+              "unit": "adultos",
+              "childRate": "USD 35 niños (4-11 años) · infantes cortesía del capitán",
+              "includes": [
+                "Tour enfocado en la historia de la isla",
+                "Transporte terrestre y marítimo, hidratación y almuerzo tipo snack (hamburguesa + bebida)",
+                "Acceso a club de playa y guía experta en la historia de Cubagua",
+                "No incluye tasa portuaria"
+              ]
+            },
+            {
+              "name": "Full Day Coche",
+              "price": "USD 65",
+              "unit": "adultos",
+              "childRate": "USD 40 niños (4-11 años)",
+              "includes": [
+                "Salida desde Punta de Piedras con traslado marítimo en catamarán",
+                "Snack de bienvenida y bar nacional abierto",
+                "Almuerzo buffet a base de pescado y club de playa (toldos y sillas)",
+                "Excursión a la Laguna Rosada y animación con juegos",
+                "No incluye tasa portuaria"
+              ]
+            }
+          ],
+          "extrasTitle": "Actividades acuáticas y paddle",
+          "extras": [
+            "Snorkeling en Cubagua Lodge: USD 30 adultos / USD 20 niños menores de 10 años (mínimo 4 personas)",
+            "Introducción al buceo a pulmón (Try Freediving): USD 50",
+            "Buceo certificado (2 inmersiones): USD 75",
+            "Buceo para principiantes: USD 75 (mínimo 2 personas; incluye fotos y video GoPro, previa reserva)",
+            "Flyboard, kitesurf y windsurf en Cubagua: desde USD 80 (1 h) hasta USD 300 (9 h o más, con estadía)",
+            "Paddle Board con Koral Paddle Club: sesiones de 30 min a 2 h, o PaddleTrip de menos de 3 h (incluye traslados)",
+            "BabyPaddle (0–2 años, 45 min), FamilyPaddle (hasta 10 personas), FitPaddle y natación para adultos",
+            "Tarifas de Koral Paddle Club a consultar por separado"
+          ],
+          "conditions": [
+            "Las excursiones marítimas no incluyen tasa portuaria salvo que se indique lo contrario",
+            "Disponibilidad y tarifas de actividades acuáticas sujetas a reserva y mínimo de participantes",
+            "Consulta opciones de hoteles todo incluido y alojamientos pet friendly según fechas"
+          ],
+          "contactWhatsApp": "584249055466"
+        }
+      ]
     }
   ]
 }

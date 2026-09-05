@@ -1,3 +1,23 @@
+export interface DestinationPackage {
+  name: string;
+  price: string;
+  unit?: string;
+  badge?: string;
+  includes: string[];
+  childRate?: string;
+}
+
+export interface DestinationOffer {
+  title: string;
+  subtitle?: string;
+  highlight?: string;
+  packages: DestinationPackage[];
+  extrasTitle?: string;
+  extras?: string[];
+  conditions?: string[];
+  contactWhatsApp?: string;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -12,6 +32,10 @@ export interface Destination {
   typicalDuration: string;
   howToGetThere: string;
   listingCount: number;
+  /** Preferido: una o más ofertas comerciales */
+  offers?: DestinationOffer[];
+  /** Compatibilidad con destinos que aún usan una sola oferta */
+  offer?: DestinationOffer;
 }
 
 export interface HostListing {

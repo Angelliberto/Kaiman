@@ -1,6 +1,26 @@
 import { existsSync, readdirSync, readFileSync } from 'fs';
 import { extname, resolve } from 'path';
 
+export interface DestinationPackage {
+  name: string;
+  price: string;
+  unit?: string;
+  badge?: string;
+  includes: string[];
+  childRate?: string;
+}
+
+export interface DestinationOffer {
+  title: string;
+  subtitle?: string;
+  highlight?: string;
+  packages: DestinationPackage[];
+  extrasTitle?: string;
+  extras?: string[];
+  conditions?: string[];
+  contactWhatsApp?: string;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -15,6 +35,8 @@ export interface Destination {
   bestSeason: string;
   typicalDuration: string;
   howToGetThere: string;
+  offers?: DestinationOffer[];
+  offer?: DestinationOffer;
 }
 
 interface DestinationsFile {

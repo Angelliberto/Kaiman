@@ -3,11 +3,18 @@ import { Link, useParams } from 'react-router-dom';
 import { fetchDestination, fetchDestinations, fetchListings } from '../api/client';
 import { DestinationShowcase } from '../components/DestinationShowcase';
 import { ListingCard } from '../components/ListingCard';
+import { OfferPackagesCarousel } from '../components/OfferPackagesCarousel';
 import { PageMessage } from '../components/PageMessage';
-import type { Destination, HostListing } from '../types';
+import type { Destination, DestinationOffer, HostListing } from '../types';
 import { preloadDestinationImages } from '../utils/destinationHelpers';
 
 type Filter = 'all' | 'available';
+
+function getDestinationOffers(destination: Destination): DestinationOffer[] {
+  if (destination.offers?.length) return destination.offers;
+  if (destination.offer) return [destination.offer];
+  return [];
+}
 
 export function DestinationPage() {
   const { id } = useParams();
@@ -103,6 +110,7 @@ export function DestinationPage() {
   }
 
   const fadeClass = contentVisible ? 'is-visible' : '';
+  const offers = getDestinationOffers(destination);
 
   return (
     <div className="page-stack destination-page">
@@ -154,6 +162,63 @@ export function DestinationPage() {
             </ul>
           </div>
         </section>
+
+        {offers.map((offer) => (
+          <section key={offer.title} className="panel destination-offer">
+            <div className="panel-header section-panel-header destination-offer-header">
+              <div>
+                <p className="section-kicker">Oferta</p>
+                <h2>{offer.title}</h2>
+                {offer.subtitle && (
+                  <p className="muted destination-offer-subtitle">{offer.subtitle}</p>
+                )}
+              </div>
+              {offer.highlight && (
+                <span className="destination-offer-badge">{offer.highlight}</span>
+              )}
+            </div>
+
+            <div className="panel-body destination-offer-body">
+              <OfferPackagesCarousel packages={offer.packages} label={offer.title} />
+
+              {offer.extras && offer.extras.length > 0 && (
+                <div className="destination-offer-block">
+                  <h3>{offer.extrasTitle ?? 'Extras y adicionales'}</h3>
+                  <ul className="highlight-list">
+                    {offer.extras.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {offer.conditions && offer.conditions.length > 0 && (
+                <details className="destination-offer-conditions">
+                  <summary>Condiciones</summary>
+                  <ul className="highlight-list">
+                    {offer.conditions.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+
+              {offer.contactWhatsApp && (
+                <div className="destination-offer-cta">
+                  <a
+                    href={`https://wa.me/${offer.contactWhatsApp}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-cta"
+                  >
+                    Consultar por WhatsApp
+                  </a>
+                  <p className="muted">Te ayudamos con boletería, fechas y el plan ideal.</p>
+                </div>
+              )}
+            </div>
+          </section>
+        ))}
 
         {listings.length > 0 && (
           <section className="destination-listings">

@@ -4,7 +4,7 @@ import 'react-phone-number-input/style.css';
 import { submitContact } from '../api/client';
 import { nativePhoneLabels } from '../utils/phoneCountryLabels';
 
-const RECIPIENT_EMAIL = 'Kaimantravel@gmail.com';
+const RECIPIENT_EMAIL = 'kaimantravel@gmail.com';
 
 type ContactToggleProps = {
   open: boolean;
@@ -139,7 +139,7 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
             <p className="contact-panel-kicker">Escríbenos</p>
             <h2 id={`${formId}-title`}>¿En qué podemos ayudarte?</h2>
             <p className="contact-panel-subtitle">
-              Cuéntanos tu plan de viaje y te responderemos a {RECIPIENT_EMAIL}.
+              Cuéntanos tu plan de viaje y te responderemos desde {RECIPIENT_EMAIL}.
             </p>
           </div>
           <button

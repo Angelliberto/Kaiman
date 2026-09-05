@@ -8,17 +8,17 @@ import type { Destination, SiteInfo } from '../types';
 const FEATURES = [
   {
     title: 'Destinos icónicos',
-    text: 'Lo ultimo del gran escandalo, homero simpson cubierto en una bolsa de oxigeno que segun el le da PODERES SEXUALES',
+    text: 'Roraima, Salto Ángel, Los Roques y Margarita: tepuyes, selva, cayos y playas caribeñas en un solo lugar.',
     tone: 'green',
   },
   {
-    title: 'Experiencias Unicas',
-    text: '-Homero aqui hay una familia de Zariweyas - A la grande le puse Cuca',
+    title: 'Experiencias a tu medida',
+    text: 'Expediciones, todo incluido, posadas y excursiones. Diseñamos tu viaje lejos de los itinerarios estándar.',
     tone: 'orange',
   },
   {
-    title: 'Hospedajes',
-    text: 'Trabajo muy duro como un esclavo y ya no ay ya se me olvido todo bueno paguenme dinero',
+    title: 'Todo resuelto',
+    text: 'Boletería, traslados, alojamiento y asesoría de principio a fin. Tú eliges el destino; nosotros armamos el plan.',
     tone: 'rose',
   },
 ];
@@ -81,9 +81,17 @@ export function HomePage() {
             Explora y empieza tu viaje con <span>{site?.hostName ?? 'KAIMAN'}</span>
           </h1>
           <p className="hero-text">
-            Tepuyes, la cascada más alta del mundo, lagunas de Canaima, cayos
-            vírgenes y playas caribeñas. Elige tu destino y planifica la aventura.
+            Tepuyes, la cascada más alta del mundo, cayos vírgenes y playas caribeñas.
+            Elige tu destino y vive la aventura con todo resuelto.
           </p>
+          <div className="hero-actions">
+            <a href="#destinos" className="btn btn-cta">
+              Ver destinos
+            </a>
+            <a href="#contacto" className="btn btn-outline-light">
+              Contáctanos
+            </a>
+          </div>
         </div>
       </section>
 
@@ -101,13 +109,13 @@ export function HomePage() {
           <p className="section-kicker">Destinos populares</p>
           <h2>Explora los mejores lugares de Venezuela</h2>
           <p className="section-subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+            Desde la Gran Sabana hasta el Caribe: elige tu próximo viaje y descubre
+            planes, precios y experiencias listas para reservar.
           </p>
         </div>
 
         <DestinationsCarousel destinations={destinations} />
       </section>
-
     </div>
   );
 }
