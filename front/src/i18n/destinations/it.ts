@@ -1,4 +1,4 @@
-import type { LocalizedDestinationPatch } from './types';
+﻿import type { LocalizedDestinationPatch } from './types';
 
 export const it: Record<string, LocalizedDestinationPatch> = {
   roraima: {
@@ -27,7 +27,9 @@ export const it: Record<string, LocalizedDestinationPatch> = {
         packages: [
           {
             name: '6 giorni / 5 notti',
-            price: '',
+            price: 'Da USD 480',
+            childRate:
+              'Partenza da San Francisco de Yuruaní: USD 480 · Partenza da Puerto Ordaz: USD 680 · Partenza da Caracas via terra (alloggio a Ciudad Bolívar): USD 920',
             unit: 'itinerario classico',
             badge: '6D / 5N',
             includes: [
@@ -39,7 +41,9 @@ export const it: Record<string, LocalizedDestinationPatch> = {
           },
           {
             name: '7 giorni / 6 notti',
-            price: '',
+            price: 'Da USD 580',
+            childRate:
+              'Partenza da San Francisco de Yuruaní: USD 580 · Partenza da Puerto Ordaz: USD 780 · Partenza da Caracas via terra (alloggio a Ciudad Bolívar): USD 1.100',
             unit: 'più tempo in vetta',
             badge: '7D / 6N',
             includes: [
@@ -51,7 +55,9 @@ export const it: Record<string, LocalizedDestinationPatch> = {
           },
           {
             name: '8 giorni / 7 notti',
-            price: '',
+            price: 'Da USD 680',
+            childRate:
+              'Partenza da San Francisco de Yuruaní: USD 680 · Partenza da Puerto Ordaz: USD 980 · Partenza da Caracas via terra (alloggio a Ciudad Bolívar): USD 1.280',
             unit: 'percorso esteso fino a La Proa',
             badge: '8D / 7N',
             includes: [
@@ -157,10 +163,10 @@ export const it: Record<string, LocalizedDestinationPatch> = {
       packages: [
         {
           name: 'Piano Base',
-          price: 'EUR 135',
+          price: 'USD 135',
           unit: 'per persona × notte',
           childRate:
-            'EUR 90 × notte (età 4–16; escursione ai cay non inclusa; -15% OFF sui cay vicini se gli adulti li hanno già prenotati)',
+            'USD 90 × notte (età 4–16; escursione ai cay non inclusa; -15% OFF sui cay vicini se gli adulti li hanno già prenotati)',
           includes: [
             'Pensione completa con drink di benvenuto (niente colazione il giorno di arrivo né pranzo il giorno di partenza)',
             'Escursione a Madrisquí e Francisquí, con trasferimento sicuro',
@@ -169,11 +175,11 @@ export const it: Record<string, LocalizedDestinationPatch> = {
         },
         {
           name: 'Piano Premium',
-          price: 'EUR 155',
+          price: 'USD 155',
           unit: 'per persona × notte',
           badge: '-15% OFF',
           childRate:
-            'EUR 95 × notte (età 4–16; stesse condizioni dei cay del piano Base)',
+            'USD 95 × notte (età 4–16; stesse condizioni dei cay del piano Base)',
           includes: [
             'Pensione completa con drink di benvenuto; pranzo di partenza: burger di pollo croccante con patatine o tostones ripieni di formaggio',
             'Include Madrisquí, Francisquí e un’uscita di snorkeling a La Virgen (una volta per persona, con video ricordo)',

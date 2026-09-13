@@ -22,6 +22,10 @@ function mergePackage(base: DestinationPackage, patch?: DestinationPackage): Des
   return {
     ...base,
     ...patch,
+    price: patch.price?.trim() ? patch.price : base.price,
+    unit: patch.unit ?? base.unit,
+    badge: patch.badge ?? base.badge,
+    childRate: patch.childRate ?? base.childRate,
     includes: patch.includes ?? base.includes,
   };
 }

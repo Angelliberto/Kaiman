@@ -6,17 +6,17 @@
       "region": "Gran Sabana, Bolívar",
       "tagline": "El tepuy del mundo perdido",
       "description": "Una de las formaciones geológicas más antiguas y místicas de la Tierra: el tepuy más alto y famoso del Parque Nacional Canaima. En lengua pemón, Roroimö —«la gran montaña verdeazulada».",
-      "longDescription": "Salimos todas las semanas del año desde San Francisco de Yuruaní y Puerto Ordaz. No necesitas armar grupo: puedes unirte a cualquier salida. Financiamiento por cuotas flexibles hasta la fecha de tu expedición, y ofertas para parejas o grupos. Elige entre tres itinerarios: 6D/5N, 7D/6N u 8D/7N.",
+      "longDescription": "Salimos todas las semanas del año (no necesitas un grupo): puedes unirte a cualquier salida. Financiamiento por cuotas. Salidas desde San Francisco de Yuruaní, Puerto Ordaz o Caracas vía terrestre con alojamiento en Ciudad Bolívar. Elige entre tres itinerarios: 6D/5N, 7D/6N u 8D/7N.",
       "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400",
       "highlights": [
         "Salidas semanales todo el año · únete sin grupo propio",
         "Tres itinerarios: 6, 7 u 8 días en la Gran Sabana",
         "Cumbre a 2.800 m: Valle de los Cuarzos, Jacuzzis, Maverick Rock",
-        "Financiamiento por cuotas y ofertas para parejas o grupos"
+        "Financiamiento por cuotas y salidas desde Yuruaní, Puerto Ordaz o Caracas"
       ],
       "bestSeason": "Todo el año; diciembre a marzo suele tener menos lluvia",
       "typicalDuration": "6 a 8 días (5 a 7 noches)",
-      "howToGetThere": "Punto de partida: San Francisco de Yuruaní o Puerto Ordaz. Trekking desde Paraitepuy con chequeo en INPARQUES.",
+      "howToGetThere": "Puntos de partida: San Francisco de Yuruaní, Puerto Ordaz o Caracas vía terrestre (con alojamiento en Ciudad Bolívar). Trekking desde Paraitepuy con chequeo en INPARQUES.",
       "offers": [
         {
           "title": "Expediciones Roraima Tepuy",
@@ -25,9 +25,10 @@
           "packages": [
             {
               "name": "6 días / 5 noches",
-              "price": "",
+              "price": "Desde USD 480",
               "unit": "itinerario clásico",
               "badge": "6D / 5N",
+              "childRate": "Salida desde San Francisco de Yuruaní: USD 480 · Salida desde Puerto Ordaz: USD 680 · Salida desde Caracas vía terrestre (aloj. en Ciudad Bolívar): USD 920",
               "includes": [
                 "Ascenso a la cumbre por La Rampa y noche en «hotel» (cueva de roca)",
                 "Recorrido de cumbre: Valle de los Cuarzos, Jacuzzis, Ventana de Kukenan y Maverick Rock (2.800 m)",
@@ -37,9 +38,10 @@
             },
             {
               "name": "7 días / 6 noches",
-              "price": "",
+              "price": "Desde USD 580",
               "unit": "más tiempo en cumbre",
               "badge": "7D / 6N",
+              "childRate": "Salida desde San Francisco de Yuruaní: USD 580 · Salida desde Puerto Ordaz: USD 780 · Salida desde Caracas vía terrestre (aloj. en Ciudad Bolívar): USD 1.100",
               "includes": [
                 "Misma ruta de acceso y ascenso a la cumbre",
                 "Dos jornadas de exploración en la meseta (punto triple, fosa, Valle de los Cristales, Ojos de Cristal, Abismo, Campo de Golf)",
@@ -49,9 +51,10 @@
             },
             {
               "name": "8 días / 7 noches",
-              "price": "",
+              "price": "Desde USD 680",
               "unit": "ruta ampliada a La Proa",
               "badge": "8D / 7N",
+              "childRate": "Salida desde San Francisco de Yuruaní: USD 680 · Salida desde Puerto Ordaz: USD 980 · Salida desde Caracas vía terrestre (aloj. en Ciudad Bolívar): USD 1.280",
               "includes": [
                 "Todo lo del programa largo en cumbre",
                 "Campamento en lado Brasil (hotel Qoati) y paso por el punto triple",
@@ -68,8 +71,8 @@
             "Ofertas especiales para parejas o grupos"
           ],
           "conditions": [
-            "Salidas todas las semanas del año desde San Francisco de Yuruaní y Puerto Ordaz",
-            "Puedes unirte a cualquier salida; no es necesario armar grupo propio",
+            "Salidas todas las semanas del año; puedes unirte a cualquier salida sin armar grupo propio",
+            "Tarifas en USD según punto de partida: San Francisco de Yuruaní, Puerto Ordaz o Caracas vía terrestre con alojamiento en Ciudad Bolívar",
             "Recorridos en cumbre sujetos a condición física del grupo y al clima",
             "Consulta fechas, cupos y tarifas vigentes por WhatsApp"
           ],
@@ -190,9 +193,9 @@
         "packages": [
           {
             "name": "Plan Básico",
-            "price": "EUR 135",
+            "price": "USD 135",
             "unit": "persona × noche",
-            "childRate": "EUR 90 × noche (4 a 16 años; no incluye paseo a los cayos; 15% OFF en cayos cercanos si los adultos ya los tienen contratados)",
+            "childRate": "USD 90 × noche (4 a 16 años; no incluye paseo a los cayos; 15% OFF en cayos cercanos si los adultos ya los tienen contratados)",
             "includes": [
               "Pensión completa con bebida de bienvenida (sin desayuno el día de llegada ni almuerzo el día de salida)",
               "Excursión a Madrisquí y Francisquí, con traslado seguro",
@@ -201,10 +204,10 @@
           },
           {
             "name": "Plan Premium",
-            "price": "EUR 155",
+            "price": "USD 155",
             "unit": "persona × noche",
             "badge": "-15% OFF",
-            "childRate": "EUR 95 × noche (4 a 16 años; misma condición de cayos que el plan Básico)",
+            "childRate": "USD 95 × noche (4 a 16 años; misma condición de cayos que el plan Básico)",
             "includes": [
               "Pensión completa con bebida de bienvenida; almuerzo de salida: hamburguesa de pollo crispy con papas o tostones rellenos de queso",
               "Incluye Madrisquí, Francisquí y una salida de snorkel a La Virgen (una vez por persona, con video de recuerdo)",

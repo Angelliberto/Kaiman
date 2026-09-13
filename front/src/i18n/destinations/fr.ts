@@ -1,4 +1,4 @@
-import type { LocalizedDestinationPatch } from './types';
+﻿import type { LocalizedDestinationPatch } from './types';
 
 export const fr: Record<string, LocalizedDestinationPatch> = {
   roraima: {
@@ -27,7 +27,9 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
         packages: [
           {
             name: '6 jours / 5 nuits',
-            price: '',
+            price: 'À partir de USD 480',
+            childRate:
+              'Départ de San Francisco de Yuruaní : USD 480 · Départ de Puerto Ordaz : USD 680 · Départ de Caracas par voie terrestre (héberg. à Ciudad Bolívar) : USD 920',
             unit: 'itinéraire classique',
             badge: '6D / 5N',
             includes: [
@@ -39,7 +41,9 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
           },
           {
             name: '7 jours / 6 nuits',
-            price: '',
+            price: 'À partir de USD 580',
+            childRate:
+              'Départ de San Francisco de Yuruaní : USD 580 · Départ de Puerto Ordaz : USD 780 · Départ de Caracas par voie terrestre (héberg. à Ciudad Bolívar) : USD 1.100',
             unit: 'plus de temps au sommet',
             badge: '7D / 6N',
             includes: [
@@ -51,7 +55,9 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
           },
           {
             name: '8 jours / 7 nuits',
-            price: '',
+            price: 'À partir de USD 680',
+            childRate:
+              'Départ de San Francisco de Yuruaní : USD 680 · Départ de Puerto Ordaz : USD 980 · Départ de Caracas par voie terrestre (héberg. à Ciudad Bolívar) : USD 1.280',
             unit: 'itinéraire prolongé vers La Proa',
             badge: '8D / 7N',
             includes: [
@@ -105,7 +111,7 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
           {
             name: 'Programme complet',
             price: 'USD 830–890',
-            unit: 'par personne · réservation anticipée = meilleur tarif',
+            unit: 'par personne · réservation anticipée = meillUSD tarif',
             badge: '8–12 personnes',
             includes: [
               '2 nuits face au Salto Ángel',
@@ -135,7 +141,7 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
   'los-roques': {
     name: 'Los Roques',
     region: 'Dépendances Fédérales',
-    tagline: 'Personne ne reste insensible au charme de ses sables paradisiaques',
+    tagline: 'Sables paradisiaques des Caraïbes',
     description:
       'En matière de plages, l’archipel de Los Roques est l’un des joyaux touristiques les plus prisés du Venezuela. À travers ses 50 cayes et ses 300 bancs de sable, vous pourrez profiter d’activités variées ou simplement vous détendre.',
     longDescription:
@@ -157,10 +163,10 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
       packages: [
         {
           name: 'Plan Basique',
-          price: 'EUR 135',
+          price: 'USD 135',
           unit: 'par personne × nuit',
           childRate:
-            'EUR 90 × nuit (de 4 à 16 ans ; excursion aux cayes non incluse ; 15 % de réduction sur les cayes voisines si les adultes les ont déjà réservées)',
+            'USD 90 × nuit (de 4 à 16 ans ; excursion aux cayes non incluse ; 15 % de réduction sur les cayes voisines si les adultes les ont déjà réservées)',
           includes: [
             'Pension complète avec verre de bienvenue (pas de petit-déjeuner le jour de l’arrivée ni de déjeuner le jour du départ)',
             'Excursion à Madrisquí et Francisquí, avec transfert sécurisé',
@@ -169,11 +175,11 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
         },
         {
           name: 'Plan Premium',
-          price: 'EUR 155',
+          price: 'USD 155',
           unit: 'par personne × nuit',
           badge: '-15% OFF',
           childRate:
-            'EUR 95 × nuit (de 4 à 16 ans ; mêmes conditions pour les cayes que le plan Basique)',
+            'USD 95 × nuit (de 4 à 16 ans ; mêmes conditions pour les cayes que le plan Basique)',
           includes: [
             'Pension complète avec verre de bienvenue ; déjeuner de départ : burger au poulet croustillant avec frites ou tostones farcis au fromage',
             'Comprend Madrisquí, Francisquí et une sortie snorkeling à La Virgen (une fois par personne, avec vidéo souvenir)',
@@ -202,7 +208,7 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
   'isla-de-margarita': {
     name: 'Île de Margarita',
     region: 'Nueva Esparta',
-    tagline: 'La Perle des Caraïbes vous attend',
+    tagline: 'La Perle des Caraïbes',
     description:
       'Pour de nombreux Vénézuéliens et visiteurs étrangers, l’île de Margarita est la porte d’entrée vers les Caraïbes les plus authentiques. Plages de sable doré, mers calmes et une atmosphère festive qui mêle nature, culture et histoire.',
     longDescription:

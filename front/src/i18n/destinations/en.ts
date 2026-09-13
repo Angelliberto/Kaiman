@@ -1,4 +1,4 @@
-import type { LocalizedDestinationPatch } from './types';
+﻿import type { LocalizedDestinationPatch } from './types';
 
 export const en: Record<string, LocalizedDestinationPatch> = {
   roraima: {
@@ -8,17 +8,17 @@ export const en: Record<string, LocalizedDestinationPatch> = {
     description:
       'One of Earth’s oldest and most mystical geological formations: the highest and most famous tepui in Canaima National Park. In the Pemón language, Roroimö — “the great green-blue mountain”.',
     longDescription:
-      'We depart every week of the year from San Francisco de Yuruaní and Puerto Ordaz. No need to build your own group: you can join any departure. Flexible installment plans until your expedition date, plus offers for couples or groups. Choose among three itineraries: 6D/5N, 7D/6N or 8D/7N.',
+      'We depart every week of the year (no group required): you can join any weekly departure. Installment financing available. Departures from San Francisco de Yuruaní, Puerto Ordaz or Caracas by land with lodging in Ciudad Bolívar. Choose among three itineraries: 6D/5N, 7D/6N or 8D/7N.',
     highlights: [
       'Weekly departures year-round · join without your own group',
       'Three itineraries: 6, 7 or 8 days in the Gran Sabana',
       'Summit at 2,800 m: Valley of Crystals, Jacuzzis, Maverick Rock',
-      'Installment financing and offers for couples or groups',
+      'Installment financing · departures from Yuruaní, Puerto Ordaz or Caracas',
     ],
     bestSeason: 'Year-round; December to March usually has less rain',
     typicalDuration: '6 to 8 days (5 to 7 nights)',
     howToGetThere:
-      'Starting point: San Francisco de Yuruaní or Puerto Ordaz. Trekking from Paraitepuy with INPARQUES check-in.',
+      'Departure points: San Francisco de Yuruaní, Puerto Ordaz or Caracas by land (with lodging in Ciudad Bolívar). Trekking from Paraitepuy with INPARQUES check-in.',
     offers: [
       {
         title: 'Roraima Tepui Expeditions',
@@ -27,9 +27,11 @@ export const en: Record<string, LocalizedDestinationPatch> = {
         packages: [
           {
             name: '6 days / 5 nights',
-            price: '',
+            price: 'From USD 480',
             unit: 'classic itinerary',
             badge: '6D / 5N',
+            childRate:
+              'Departure from San Francisco de Yuruaní: USD 480 · Departure from Puerto Ordaz: USD 680 · Departure from Caracas by land (lodging in Ciudad Bolívar): USD 920',
             includes: [
               'Summit ascent via La Rampa and a night in the “hotel” (rock cave)',
               'Summit trek: Valley of Crystals, Jacuzzis, Kukenan Window and Maverick Rock (2,800 m)',
@@ -39,9 +41,11 @@ export const en: Record<string, LocalizedDestinationPatch> = {
           },
           {
             name: '7 days / 6 nights',
-            price: '',
+            price: 'From USD 580',
             unit: 'more time on the summit',
             badge: '7D / 6N',
+            childRate:
+              'Departure from San Francisco de Yuruaní: USD 580 · Departure from Puerto Ordaz: USD 780 · Departure from Caracas by land (lodging in Ciudad Bolívar): USD 1,100',
             includes: [
               'Same access route and summit ascent',
               'Two exploration days on the plateau (triple point, sinkhole, Crystal Valley, Crystal Eyes, Abyss, Golf Course)',
@@ -51,9 +55,11 @@ export const en: Record<string, LocalizedDestinationPatch> = {
           },
           {
             name: '8 days / 7 nights',
-            price: '',
+            price: 'From USD 680',
             unit: 'extended route to La Proa',
             badge: '8D / 7N',
+            childRate:
+              'Departure from San Francisco de Yuruaní: USD 680 · Departure from Puerto Ordaz: USD 980 · Departure from Caracas by land (lodging in Ciudad Bolívar): USD 1,280',
             includes: [
               'Everything in the long summit program',
               'Camp on the Brazil side (Qoati hotel) and passage through the triple point',
@@ -70,8 +76,8 @@ export const en: Record<string, LocalizedDestinationPatch> = {
           'Special offers for couples or groups',
         ],
         conditions: [
-          'Departures every week of the year from San Francisco de Yuruaní and Puerto Ordaz',
-          'You can join any departure; no need to form your own group',
+          'Departures every week of the year; join any departure without forming your own group',
+          'USD rates by departure point: San Francisco de Yuruaní, Puerto Ordaz or Caracas by land with lodging in Ciudad Bolívar',
           'Summit routes subject to group fitness and weather',
           'Ask about current dates, spots and rates via WhatsApp',
         ],
@@ -157,10 +163,10 @@ export const en: Record<string, LocalizedDestinationPatch> = {
       packages: [
         {
           name: 'Basic Plan',
-          price: 'EUR 135',
+          price: 'USD 135',
           unit: 'per person × night',
           childRate:
-            'EUR 90 × night (ages 4–16; cay trip not included; 15% OFF nearby cays if adults already booked them)',
+            'USD 90 × night (ages 4–16; cay trip not included; 15% OFF nearby cays if adults already booked them)',
           includes: [
             'Full board with welcome drink (no breakfast on arrival day or lunch on departure day)',
             'Excursion to Madrisquí and Francisquí, with safe transfer',
@@ -169,11 +175,11 @@ export const en: Record<string, LocalizedDestinationPatch> = {
         },
         {
           name: 'Premium Plan',
-          price: 'EUR 155',
+          price: 'USD 155',
           unit: 'per person × night',
           badge: '-15% OFF',
           childRate:
-            'EUR 95 × night (ages 4–16; same cay conditions as the Basic plan)',
+            'USD 95 × night (ages 4–16; same cay conditions as the Basic plan)',
           includes: [
             'Full board with welcome drink; departure lunch: crispy chicken burger with fries or cheese-stuffed tostones',
             'Includes Madrisquí, Francisquí and one snorkeling outing to La Virgen (once per person, with keepsake video)',

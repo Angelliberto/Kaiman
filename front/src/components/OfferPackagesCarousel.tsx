@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useI18n } from '../i18n/LanguageContext';
 import type { DestinationPackage } from '../types';
 
 interface OfferPackagesCarouselProps {
@@ -33,6 +34,7 @@ export function OfferPackagesCarousel({
   packages,
   label = 'Paquetes',
 }: OfferPackagesCarouselProps) {
+  const { t } = useI18n();
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [perView, setPerView] = useState(() => getPerView());
@@ -105,6 +107,16 @@ export function OfferPackagesCarousel({
 
   const showNav = packages.length > perView;
 
+  const splitRateLines = (value: string) =>
+    value
+      .split(/\s*·\s*/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+  const isDeparturePricing = (lines: string[]) =>
+    lines.length >= 2 &&
+    lines.some((line) => /Yuruaní|Puerto Ordaz|Caracas/i.test(line));
+
   return (
     <div className="offer-packages-carousel">
       {showNav && (
@@ -133,28 +145,42 @@ export function OfferPackagesCarousel({
       )}
 
       <div ref={trackRef} className="offer-packages-track">
-        {packages.map((pkg) => (
-          <article key={pkg.name} className="destination-package offer-package-slide">
-            <div className="destination-package-top">
-              <div>
-                <h3>{pkg.name}</h3>
-                {pkg.badge && <span className="destination-package-tag">{pkg.badge}</span>}
+        {packages.map((pkg) => {
+          const rateLines = pkg.childRate ? splitRateLines(pkg.childRate) : [];
+          const showDepartureLabel = isDeparturePricing(rateLines);
+
+          return (
+            <article key={pkg.name} className="destination-package offer-package-slide">
+              <div className="destination-package-top">
+                <div>
+                  <h3>{pkg.name}</h3>
+                  {pkg.badge && <span className="destination-package-tag">{pkg.badge}</span>}
+                </div>
+                <p className="destination-package-price">
+                  <strong>{pkg.price}</strong>
+                  {pkg.unit && <span>{pkg.unit}</span>}
+                </p>
               </div>
-              <p className="destination-package-price">
-                <strong>{pkg.price}</strong>
-                {pkg.unit && <span>{pkg.unit}</span>}
-              </p>
-            </div>
-            <ul className="highlight-list">
-              {pkg.includes.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            {pkg.childRate && (
-              <p className="muted destination-package-child">{pkg.childRate}</p>
-            )}
-          </article>
-        ))}
+              <ul className="highlight-list">
+                {pkg.includes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              {rateLines.length > 0 && (
+                <div className="destination-package-rates">
+                  {showDepartureLabel ? (
+                    <p className="destination-package-rates-title">{t('priceByDeparture')}</p>
+                  ) : null}
+                  <ul className="highlight-list">
+                    {rateLines.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </article>
+          );
+        })}
       </div>
 
       {showNav && (

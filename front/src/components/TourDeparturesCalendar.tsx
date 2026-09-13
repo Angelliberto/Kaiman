@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useContact } from '../context/ContactContext';
 import { useI18n } from '../i18n/LanguageContext';
 import type { LangCode } from '../i18n/translations';
@@ -122,6 +122,8 @@ export function TourDeparturesCalendar({
 
   const [cursor, setCursor] = useState(initial);
   const [scope, setScope] = useState<'month' | 'year'>('month');
+  const listRef = useRef<HTMLDivElement>(null);
+  const calendarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setCursor(initial);
@@ -170,6 +172,54 @@ export function TourDeparturesCalendar({
     });
   }, [departures, interactive, scope, cursor.year, cursor.month]);
 
+  useEffect(() => {
+    if (interactive) return;
+
+    const list = listRef.current;
+    const calendar = calendarRef.current;
+    if (!list || !calendar) return;
+
+    const syncListHeight = () => {
+      const mobile = window.matchMedia('(max-width: 900px)').matches;
+      if (!mobile) {
+        list.style.maxHeight = '';
+        return;
+      }
+
+      const cards = Array.from(list.querySelectorAll<HTMLElement>('.tour-departure-card'));
+      if (cards.length === 0) {
+        list.style.maxHeight = '';
+        return;
+      }
+
+      const styles = window.getComputedStyle(list);
+      const gap = Number.parseFloat(styles.rowGap || styles.gap || '0') || 0;
+      const visibleCount = Math.min(2, cards.length);
+      let height = 0;
+      for (let i = 0; i < visibleCount; i += 1) {
+        height += cards[i].offsetHeight;
+        if (i < visibleCount - 1) height += gap;
+      }
+
+      list.style.maxHeight = `${Math.ceil(height)}px`;
+    };
+
+    const frame = requestAnimationFrame(() => {
+      requestAnimationFrame(syncListHeight);
+    });
+    const observer = new ResizeObserver(() => syncListHeight());
+    observer.observe(list);
+    observer.observe(calendar);
+    window.addEventListener('resize', syncListHeight);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener('resize', syncListHeight);
+      list.style.maxHeight = '';
+    };
+  }, [interactive, visibleDepartures, cursor.year, cursor.month, scope, lang]);
+
   if (interactive) {
     return (
       <AdminDayPicker
@@ -210,7 +260,7 @@ export function TourDeparturesCalendar({
       </div>
 
       <div className="tour-board-layout">
-        <div className="tour-board-list">
+        <div className="tour-board-list" ref={listRef}>
           {visibleDepartures.length === 0 ? (
             <p className="muted tour-board-empty">{t('noDeparturesPeriod')}</p>
           ) : (
@@ -253,7 +303,7 @@ export function TourDeparturesCalendar({
           )}
         </div>
 
-        <aside className="tour-mini-panel">
+        <aside className="tour-mini-panel" ref={calendarRef}>
           <div className="tour-mini-weekdays">
             {weekdays.map((day) => (
               <span key={day}>{day}</span>
