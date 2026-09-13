@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiMaximize2 } from 'react-icons/fi';
 import { DestinationNavBar } from './DestinationNavBar';
 import { ImageCarousel } from './ImageCarousel';
+import { useI18n } from '../i18n/LanguageContext';
 import type { Destination } from '../types';
 import { getDestinationImages } from '../utils/destinationHelpers';
 
@@ -29,6 +30,7 @@ export function DestinationShowcase({
   intervalMs = 4500,
   copyVisible = true,
 }: DestinationShowcaseProps) {
+  const { t } = useI18n();
   const images = useMemo(() => getDestinationImages(destination), [destination]);
   const TitleTag = headingLevel;
   const fadeClass = copyVisible ? 'is-visible' : '';
@@ -68,7 +70,7 @@ export function DestinationShowcase({
         <button
           type="button"
           className="carousel-gallery-trigger destinations-showcase-gallery-trigger"
-          aria-label="Ver galería en pantalla completa"
+          aria-label={t('viewGallery')}
           onClick={(event) => {
             event.preventDefault();
             event.stopPropagation();
@@ -83,7 +85,7 @@ export function DestinationShowcase({
             to={`/destino/${destination.id}`}
             className="btn btn-cta destinations-showcase-cta"
           >
-            Explorar destino
+            {t('exploreDestination')}
           </Link>
         )}
       </div>

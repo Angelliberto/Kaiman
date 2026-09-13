@@ -84,3 +84,19 @@ export interface ListingAvailability {
   syncedAt?: string;
   source: 'airbnb-ical' | 'manual-example';
 }
+
+export interface TourDeparture {
+  id: string;
+  destinationId: string;
+  startDate: string;
+  endDate: string;
+  label: string;
+  durationDays: number;
+  visibleToPublic: boolean;
+}
+
+export interface TourDeparturesResponse {
+  destinationId: string;
+  leadDays: number;
+  departures: TourDeparture[];
+}

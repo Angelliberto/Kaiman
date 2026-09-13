@@ -2,20 +2,18 @@ import { FormEvent, useEffect, useId, useState } from 'react';
 import PhoneInput, { type Value } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { submitContact } from '../api/client';
+import { useContact } from '../context/ContactContext';
+import { useI18n } from '../i18n/LanguageContext';
 import { nativePhoneLabels } from '../utils/phoneCountryLabels';
 
 const RECIPIENT_EMAIL = 'kaimantravel@gmail.com';
-
-type ContactToggleProps = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-};
 
 type FormState = {
   name: string;
   email: string;
   phone: string;
   message: string;
+  company: string;
 };
 
 const EMPTY_FORM: FormState = {
@@ -23,6 +21,7 @@ const EMPTY_FORM: FormState = {
   email: '',
   phone: '',
   message: '',
+  company: '',
 };
 
 function MailIcon() {
@@ -41,8 +40,10 @@ function CloseIcon() {
   );
 }
 
-export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
+export function ContactToggle() {
   const formId = useId();
+  const { t } = useI18n();
+  const { open, prefill, openContact, setOpen } = useContact();
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [submitting, setSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; text: string } | null>(
@@ -53,7 +54,7 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
     if (!open) return;
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onOpenChange(false);
+      if (event.key === 'Escape') setOpen(false);
     };
 
     document.body.style.overflow = 'hidden';
@@ -63,13 +64,21 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [open, onOpenChange]);
+  }, [open, setOpen]);
 
   useEffect(() => {
     if (!open) {
       setFeedback(null);
+      return;
     }
-  }, [open]);
+
+    if (prefill?.message) {
+      setForm((current) => ({
+        ...current,
+        message: prefill.message ?? current.message,
+      }));
+    }
+  }, [open, prefill]);
 
   const updateField = (field: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
@@ -87,19 +96,20 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
         email: form.email.trim(),
         phone: form.phone.trim() || undefined,
         message: form.message.trim(),
+        company: form.company,
       });
 
       setFeedback({
         type: 'success',
-        text: '¡Mensaje enviado! Te responderemos pronto.',
+        text: t('contactSuccess'),
       });
       setForm(EMPTY_FORM);
 
-      window.setTimeout(() => onOpenChange(false), 1800);
+      window.setTimeout(() => setOpen(false), 1800);
     } catch (err) {
       setFeedback({
         type: 'error',
-        text: err instanceof Error ? err.message : 'No se pudo enviar el mensaje.',
+        text: err instanceof Error ? err.message : t('contactSendError'),
       });
     } finally {
       setSubmitting(false);
@@ -111,19 +121,19 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
       <button
         type="button"
         className={`contact-fab${open ? ' is-hidden' : ''}`}
-        aria-label="Abrir formulario de contacto"
+        aria-label={t('contactOpen')}
         aria-expanded={open}
         aria-controls={formId}
-        onClick={() => onOpenChange(true)}
+        onClick={() => openContact()}
       >
         <MailIcon />
-        <span>Contacto</span>
+        <span>{t('contact')}</span>
       </button>
 
       <div
         className={`contact-panel-backdrop${open ? ' is-open' : ''}`}
         aria-hidden={!open}
-        onClick={() => onOpenChange(false)}
+        onClick={() => setOpen(false)}
       />
 
       <aside
@@ -136,25 +146,37 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
       >
         <div className="contact-panel-header">
           <div>
-            <p className="contact-panel-kicker">Escríbenos</p>
-            <h2 id={`${formId}-title`}>¿En qué podemos ayudarte?</h2>
+            <p className="contact-panel-kicker">{t('contactKicker')}</p>
+            <h2 id={`${formId}-title`}>{t('contactTitle')}</h2>
             <p className="contact-panel-subtitle">
-              Cuéntanos tu plan de viaje y te responderemos desde {RECIPIENT_EMAIL}.
+              {t('contactSubtitle', { email: RECIPIENT_EMAIL })}
             </p>
           </div>
           <button
             type="button"
             className="contact-panel-close"
-            aria-label="Cerrar formulario"
-            onClick={() => onOpenChange(false)}
+            aria-label={t('contactClose')}
+            onClick={() => setOpen(false)}
           >
             <CloseIcon />
           </button>
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
+          <label className="contact-honeypot" aria-hidden="true">
+            <span>Empresa</span>
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              value={form.company}
+              onChange={(event) => updateField('company', event.target.value)}
+            />
+          </label>
+
           <label className="contact-field">
-            <span>Nombre *</span>
+            <span>{t('contactName')}</span>
             <input
               type="text"
               name="name"
@@ -164,12 +186,12 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
               maxLength={120}
               value={form.name}
               onChange={(event) => updateField('name', event.target.value)}
-              placeholder="Tu nombre"
+              placeholder={t('contactNamePh')}
             />
           </label>
 
           <label className="contact-field">
-            <span>Email *</span>
+            <span>{t('contactEmail')}</span>
             <input
               type="email"
               name="email"
@@ -177,13 +199,13 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
               required
               value={form.email}
               onChange={(event) => updateField('email', event.target.value)}
-              placeholder="tu@email.com"
+              placeholder={t('contactEmailPh')}
             />
           </label>
 
           <div className="contact-field">
             <span>
-              Teléfono <em>(opcional)</em>
+              {t('contactPhone')} <em>{t('contactPhoneOptional')}</em>
             </span>
             <PhoneInput
               international
@@ -202,7 +224,7 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
           </div>
 
           <label className="contact-field">
-            <span>Mensaje *</span>
+            <span>{t('contactMessage')}</span>
             <textarea
               name="message"
               required
@@ -211,7 +233,7 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
               rows={5}
               value={form.message}
               onChange={(event) => updateField('message', event.target.value)}
-              placeholder="Cuéntanos destino, fechas, número de personas o lo que necesites..."
+              placeholder={prefill?.message ? prefill.message : t('contactMessagePh')}
             />
           </label>
 
@@ -225,13 +247,13 @@ export function ContactToggle({ open, onOpenChange }: ContactToggleProps) {
             <button
               type="button"
               className="btn"
-              onClick={() => onOpenChange(false)}
+              onClick={() => setOpen(false)}
               disabled={submitting}
             >
-              Cancelar
+              {t('contactCancel')}
             </button>
             <button type="submit" className="btn primary" disabled={submitting}>
-              {submitting ? 'Enviando…' : 'Enviar mensaje'}
+              {submitting ? t('contactSending') : t('contactSend')}
             </button>
           </div>
         </form>

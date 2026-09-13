@@ -6,6 +6,7 @@ import {
   listHostListings,
 } from '../services/listingsService';
 import { reloadListingsConfig } from '../config/listings';
+import { verifyAdminToken } from '../utils/adminAuth';
 
 export const getSite = (_req: Request, res: Response): void => {
   res.json(getSiteInfo());
@@ -40,9 +41,20 @@ export const getAvailability = async (
   res: Response
 ): Promise<void> => {
   try {
+    const rawDays = req.query.days ? Number(req.query.days) : 60;
+    const daysAhead = Number.isFinite(rawDays)
+      ? Math.min(120, Math.max(1, Math.floor(rawDays)))
+      : 60;
+
+    // refresh=true solo con admin (evita abuso de iCal externo)
+    const wantsRefresh = req.query.refresh === 'true';
+    const auth = req.header('authorization') ?? '';
+    const token = auth.startsWith('Bearer ') ? auth.slice(7).trim() : '';
+    const forceRefresh = wantsRefresh && verifyAdminToken(token);
+
     const availability = await getListingAvailability(String(req.params.id), {
-      daysAhead: req.query.days ? Number(req.query.days) : 60,
-      forceRefresh: req.query.refresh === 'true',
+      daysAhead,
+      forceRefresh,
     });
 
     if (!availability) {
@@ -52,9 +64,8 @@ export const getAvailability = async (
 
     res.json(availability);
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Error desconocido';
     console.error('[ListingsController] Error:', error);
-    res.status(400).json({ error: message });
+    res.status(400).json({ error: 'No se pudo obtener la disponibilidad' });
   }
 };
 

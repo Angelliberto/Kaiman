@@ -1,0 +1,81 @@
+{
+  "departures": [
+    {
+      "id": "tour_mtybkfx9_qjd8ys",
+      "destinationId": "salto-angel",
+      "startDate": "2026-10-11",
+      "endDate": "2026-10-15",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_2dc9ef",
+      "destinationId": "salto-angel",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-22",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_ikpwin",
+      "destinationId": "salto-angel",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-05",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_xtmfb8",
+      "destinationId": "salto-angel",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-08",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_nw6hq1",
+      "destinationId": "salto-angel",
+      "startDate": "2026-11-12",
+      "endDate": "2026-11-15",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_rpg349",
+      "destinationId": "salto-angel",
+      "startDate": "2026-11-22",
+      "endDate": "2026-11-26",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_wdhij7",
+      "destinationId": "salto-angel",
+      "startDate": "2026-12-06",
+      "endDate": "2026-12-10",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_9kvz7o",
+      "destinationId": "salto-angel",
+      "startDate": "2026-12-10",
+      "endDate": "2026-12-13",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_7o7zvl",
+      "destinationId": "salto-angel",
+      "startDate": "2026-12-13",
+      "endDate": "2026-12-17",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_9t4e7m",
+      "destinationId": "salto-angel",
+      "startDate": "2026-12-20",
+      "endDate": "2026-12-24",
+      "label": ""
+    },
+    {
+      "id": "tour_mtybkfx9_yht5aj",
+      "destinationId": "salto-angel",
+      "startDate": "2026-12-27",
+      "endDate": "2026-12-31",
+      "label": ""
+    }
+  ]
+}

@@ -1,4 +1,11 @@
-import type { Destination, HostListing, ListingAvailability, SiteInfo } from '../types';
+import type {
+  Destination,
+  HostListing,
+  ListingAvailability,
+  SiteInfo,
+  TourDeparture,
+  TourDeparturesResponse,
+} from '../types';
 
 const API_BASE = '/api';
 
@@ -18,6 +25,8 @@ export type ContactPayload = {
   email: string;
   phone?: string;
   message: string;
+  /** Honeypot anti-bot; debe ir vacío */
+  company?: string;
 };
 
 export const submitContact = (payload: ContactPayload): Promise<{ ok: boolean }> =>
@@ -48,3 +57,57 @@ export const fetchListingAvailability = (
   refresh = false
 ): Promise<ListingAvailability> =>
   request(`/listings/${id}/availability${refresh ? '?refresh=true' : ''}`);
+
+export const fetchTourDepartures = (destinationId: string): Promise<TourDeparturesResponse> =>
+  request(`/destinations/${destinationId}/departures`);
+
+const ADMIN_TOKEN_KEY = 'kaiman-admin-token';
+
+export const getAdminToken = (): string | null => sessionStorage.getItem(ADMIN_TOKEN_KEY);
+
+export const setAdminToken = (token: string | null) => {
+  if (token) sessionStorage.setItem(ADMIN_TOKEN_KEY, token);
+  else sessionStorage.removeItem(ADMIN_TOKEN_KEY);
+  // Limpia tokens antiguos en localStorage
+  localStorage.removeItem(ADMIN_TOKEN_KEY);
+};
+
+function adminHeaders(): HeadersInit {
+  const token = getAdminToken();
+  return {
+    'Content-Type': 'application/json',
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+  };
+}
+
+export const adminLogin = (password: string): Promise<{ token: string }> =>
+  request('/admin/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password }),
+  });
+
+export const fetchAdminDepartures = (
+  destinationId = 'salto-angel'
+): Promise<TourDeparturesResponse> =>
+  request(`/admin/departures?destination=${encodeURIComponent(destinationId)}`, {
+    headers: adminHeaders(),
+  });
+
+export const createAdminDeparture = (payload: {
+  destinationId?: string;
+  startDate: string;
+  endDate: string;
+  label?: string;
+}): Promise<TourDeparture> =>
+  request('/admin/departures', {
+    method: 'POST',
+    headers: adminHeaders(),
+    body: JSON.stringify(payload),
+  });
+
+export const deleteAdminDeparture = (id: string): Promise<{ ok: boolean }> =>
+  request(`/admin/departures/${id}`, {
+    method: 'DELETE',
+    headers: adminHeaders(),
+  });

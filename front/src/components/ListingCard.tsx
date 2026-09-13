@@ -1,13 +1,24 @@
 import { Link } from 'react-router-dom';
 import { MiniCalendar } from './MiniCalendar';
+import { useI18n } from '../i18n/LanguageContext';
+import type { LangCode } from '../i18n/translations';
 import type { HostListing } from '../types';
 
 interface ListingCardProps {
   listing: HostListing;
 }
 
-function formatDate(value: string) {
-  return new Date(value).toLocaleDateString('es-VE', {
+const LOCALE_BY_LANG: Record<LangCode, string> = {
+  es: 'es-VE',
+  en: 'en-US',
+  pt: 'pt-BR',
+  it: 'it-IT',
+  de: 'de-DE',
+  fr: 'fr-FR',
+};
+
+function formatDate(value: string, locale: string) {
+  return new Date(value).toLocaleDateString(locale, {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
@@ -15,12 +26,14 @@ function formatDate(value: string) {
 }
 
 export function ListingCard({ listing }: ListingCardProps) {
+  const { t, lang } = useI18n();
+  const locale = LOCALE_BY_LANG[lang];
   const summary = listing.availabilitySummary;
   const statusLabel = summary?.isAvailableToday
-    ? 'Disponible hoy'
+    ? t('availableToday')
     : summary?.nextAvailableDate
-      ? `Disponible desde ${formatDate(summary.nextAvailableDate)}`
-      : 'Sin fechas libres próximas';
+      ? t('availableFrom', { date: formatDate(summary.nextAvailableDate, locale) })
+      : t('noDatesSoon');
 
   const statusClass = summary?.isAvailableToday
     ? 'status-available'
@@ -44,28 +57,34 @@ export function ListingCard({ listing }: ListingCardProps) {
         <p className="muted">{listing.location}</p>
         <p>{listing.description}</p>
         <div className="listing-meta">
-          <span>{listing.bedrooms} hab.</span>
-          <span>{listing.bathrooms} baños</span>
-          <span>{listing.maxGuests} huéspedes</span>
+          <span>
+            {listing.bedrooms} {t('bedroomsShort')}
+          </span>
+          <span>
+            {listing.bathrooms} {t('bathroomsLabel')}
+          </span>
+          <span>
+            {listing.maxGuests} {t('guestsLabel')}
+          </span>
         </div>
 
         {summary ? (
           <>
             <MiniCalendar days={summary.previewDays} />
             <p className="muted calendar-legend">
-              <span className="legend-dot free" /> Disponible
-              <span className="legend-dot busy" /> Ocupado
-              · {summary.availableCount} días libres en los próximos 14
-              {summary.source === 'airbnb-ical' ? ' · sync Airbnb' : ' · ejemplo'}
+              <span className="legend-dot free" /> {t('availableLabel')}
+              <span className="legend-dot busy" /> {t('occupiedLabel')} ·{' '}
+              {t('freeDaysNext14', { count: summary.availableCount })}
+              {summary.source === 'airbnb-ical' ? ` · ${t('syncAirbnb')}` : ` · ${t('exampleSource')}`}
             </p>
           </>
         ) : (
-          <p className="muted">Sin datos de disponibilidad.</p>
+          <p className="muted">{t('noAvailabilityData')}</p>
         )}
 
         <div className="listing-actions">
           <Link to={`/hospedaje/${listing.id}`} className="btn primary">
-            Ver calendario completo
+            {t('viewFullCalendar')}
           </Link>
           <a
             href={listing.airbnbListingUrl}
@@ -73,7 +92,7 @@ export function ListingCard({ listing }: ListingCardProps) {
             rel="noreferrer"
             className="btn"
           >
-            Reservar en Airbnb
+            {t('bookOnAirbnb')}
           </a>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useI18n } from '../i18n/LanguageContext';
 import type { Destination } from '../types';
 
 type DestinationNavBarProps =
@@ -17,6 +18,7 @@ type DestinationNavBarProps =
 
 export function DestinationNavBar(props: DestinationNavBarProps) {
   const { destinations, mode } = props;
+  const { t } = useI18n();
 
   if (destinations.length === 0) {
     return null;
@@ -24,7 +26,7 @@ export function DestinationNavBar(props: DestinationNavBarProps) {
 
   if (mode === 'links') {
     return (
-      <nav className="destinations-showcase-nav" aria-label="Destinos">
+      <nav className="destinations-showcase-nav" aria-label={t('destinationsNav')}>
         {destinations.map((destination) => (
           <NavLink
             key={destination.id}
@@ -41,7 +43,7 @@ export function DestinationNavBar(props: DestinationNavBarProps) {
   const { activeIndex, onSelect } = props;
 
   return (
-    <nav className="destinations-showcase-nav" role="tablist" aria-label="Destinos">
+    <nav className="destinations-showcase-nav" role="tablist" aria-label={t('destinationsNav')}>
       {destinations.map((destination, index) => (
         <button
           key={destination.id}

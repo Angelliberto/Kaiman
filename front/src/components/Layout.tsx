@@ -4,26 +4,30 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa6';
 import { FiMail, FiPhone } from 'react-icons/fi';
 import { fetchSiteInfo } from '../api/client';
 import { ContactToggle } from './ContactToggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { ScrollToTop } from './ScrollToTop';
+import { ContactProvider, useContact } from '../context/ContactContext';
+import { LanguageProvider, useI18n } from '../i18n/LanguageContext';
 import type { SiteInfo } from '../types';
 
 const LOGO_SRC = '/images/logo/kaiman logo_logo.png';
 const FOOTER_LOGO_SRC = '/images/logo/kaiman-logo-white.svg';
 
 const CONTACT = {
-  phone: '+584249055466',
-  phoneHref: 'tel:+584249055466',
+  phone: '+584220447838',
+  phoneHref: 'tel:+584220447838',
   email: 'Kaimantravel@gmail.com',
   social: {
     instagram: 'https://instagram.com/kaimantravel',
     facebook: 'https://www.facebook.com/coorporacionKaiman',
-    whatsapp: 'https://wa.me/584249055466',
+    whatsapp: 'https://wa.me/584220447838',
   },
 };
 
-export function Layout() {
+function LayoutInner() {
   const [site, setSite] = useState<SiteInfo | null>(null);
-  const [contactOpen, setContactOpen] = useState(false);
+  const { openContact } = useContact();
+  const { t } = useI18n();
 
   useEffect(() => {
     fetchSiteInfo().then(setSite).catch(() => null);
@@ -32,14 +36,14 @@ export function Layout() {
   useEffect(() => {
     const openFromHash = () => {
       if (window.location.hash !== '#contacto') return;
-      setContactOpen(true);
+      openContact();
       window.history.replaceState(null, '', window.location.pathname + window.location.search);
     };
 
     openFromHash();
     window.addEventListener('hashchange', openFromHash);
     return () => window.removeEventListener('hashchange', openFromHash);
-  }, []);
+  }, [openContact]);
 
   return (
     <div className="app-shell">
@@ -51,17 +55,14 @@ export function Layout() {
           </NavLink>
 
           <div className="topbar-nav-wrap">
-            <nav className="nav" aria-label="Principal">
-            <Link to="/destino/roraima">
-              <span className="nav-label nav-label-full">Explorar destinos</span>
-              <span className="nav-label nav-label-short">Destinos</span>
-            </Link>
+            <LanguageSwitcher />
+            <nav className="nav" aria-label={t('navAria')}>
               <button
                 type="button"
                 className="nav-contact-trigger"
-                onClick={() => setContactOpen(true)}
+                onClick={() => openContact()}
               >
-                Contacto
+                {t('contact')}
               </button>
             </nav>
           </div>
@@ -83,17 +84,22 @@ export function Layout() {
                   className="footer-logo"
                 />
               </Link>
-              <p className="footer-tagline">Tus sueños, nuestros destinos</p>
+              <p className="footer-tagline">{t('footerTagline')}</p>
             </div>
 
             <div className="footer-col footer-col-contact">
-              <h3 className="footer-heading">Contacto</h3>
+              <h3 className="footer-heading">{t('footerContact')}</h3>
               <div className="footer-contact-list">
-                <a href={CONTACT.phoneHref} className="footer-contact-item">
+                <a
+                  href={CONTACT.social.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="footer-contact-item"
+                >
                   <span className="footer-contact-icon" aria-hidden="true">
                     <FiPhone />
                   </span>
-                  <span>+58 424 9055466</span>
+                  <span>+58 422-0447838</span>
                 </a>
                 <a href={`mailto:${CONTACT.email}`} className="footer-contact-item">
                   <span className="footer-contact-icon" aria-hidden="true">
@@ -105,7 +111,7 @@ export function Layout() {
             </div>
 
             <div className="footer-col footer-col-social">
-              <h3 className="footer-heading">Síguenos</h3>
+              <h3 className="footer-heading">{t('footerFollow')}</h3>
               <div className="footer-social-icons social-icons">
                 <a
                   href={CONTACT.social.instagram}
@@ -136,12 +142,22 @@ export function Layout() {
           </div>
 
           <p className="footer-copy">
-            © {new Date().getFullYear()} KAIMAN · Turismo en Venezuela
+            © {new Date().getFullYear()} KAIMAN · {t('footerCopy')}
           </p>
         </div>
       </footer>
 
-      <ContactToggle open={contactOpen} onOpenChange={setContactOpen} />
+      <ContactToggle />
     </div>
+  );
+}
+
+export function Layout() {
+  return (
+    <LanguageProvider>
+      <ContactProvider>
+        <LayoutInner />
+      </ContactProvider>
+    </LanguageProvider>
   );
 }

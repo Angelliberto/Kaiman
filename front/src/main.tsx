@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { AdminPage } from './pages/AdminPage';
 import { DestinationPage } from './pages/DestinationPage';
 import { HomePage } from './pages/HomePage';
 import { ListingPage } from './pages/ListingPage';
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route index element={<HomePage />} />
           <Route path="destino/:id" element={<DestinationPage />} />
           <Route path="hospedaje/:id" element={<ListingPage />} />
+          <Route path="admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
