@@ -192,17 +192,6 @@
         "highlight": "-15% OFF en el plan Premium",
         "packages": [
           {
-            "name": "Plan Básico",
-            "price": "USD 135",
-            "unit": "persona × noche",
-            "childRate": "USD 90 × noche (4 a 16 años; no incluye paseo a los cayos; 15% OFF en cayos cercanos si los adultos ya los tienen contratados)",
-            "includes": [
-              "Pensión completa con bebida de bienvenida (sin desayuno el día de llegada ni almuerzo el día de salida)",
-              "Excursión a Madrisquí y Francisquí, con traslado seguro",
-              "Equipamiento de playa: nevera con almuerzo, hielera, toldos, sillas, toallas, agua, refrescos, frutas, snacks y equipo de snorkel"
-            ]
-          },
-          {
             "name": "Plan Premium",
             "price": "USD 155",
             "unit": "persona × noche",
@@ -213,6 +202,17 @@
               "Incluye Madrisquí, Francisquí y una salida de snorkel a La Virgen (una vez por persona, con video de recuerdo)",
               "Equipamiento de playa: nevera con almuerzo, hielera, sombrilla, sillas, toallas renovadas a diario, agua, refrescos, frutas y snacks",
               "Obsequio de un six-pack de cerveza (Zulia o Polar Light en lata)"
+            ]
+          },
+          {
+            "name": "Plan Básico",
+            "price": "USD 135",
+            "unit": "persona × noche",
+            "childRate": "USD 90 × noche (4 a 16 años; no incluye paseo a los cayos; 15% OFF en cayos cercanos si los adultos ya los tienen contratados)",
+            "includes": [
+              "Pensión completa con bebida de bienvenida (sin desayuno el día de llegada ni almuerzo el día de salida)",
+              "Excursión a Madrisquí y Francisquí, con traslado seguro",
+              "Equipamiento de playa: nevera con almuerzo, hielera, toldos, sillas, toallas, agua, refrescos, frutas, snacks y equipo de snorkel"
             ]
           }
         ],

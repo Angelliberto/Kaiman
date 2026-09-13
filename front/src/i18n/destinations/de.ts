@@ -162,18 +162,6 @@ export const de: Record<string, LocalizedDestinationPatch> = {
       highlight: '-15% OFF im Premium-Plan',
       packages: [
         {
-          name: 'Basis-Plan',
-          price: 'USD 135',
-          unit: 'pro Person × Nacht',
-          childRate:
-            'USD 90 × Nacht (Alter 4–16; Ausflug zu den Cays nicht inbegriffen; -15% OFF auf nahegelegene Cays, wenn Erwachsene diese bereits gebucht haben)',
-          includes: [
-            'Vollpension mit Willkommensgetränk (kein Frühstück am Ankunftstag oder Mittagessen am Abreisetag)',
-            'Ausflug nach Madrisquí und Francisquí mit sicherem Transfer',
-            'Strand-Kit: Kühlbox mit Mittagessen, Eisbox, Zelte, Stühle, Handtücher, Wasser, Erfrischungsgetränke, Obst, Snacks und Schnorchelausrüstung',
-          ],
-        },
-        {
           name: 'Premium-Plan',
           price: 'USD 155',
           unit: 'pro Person × Nacht',
@@ -185,6 +173,18 @@ export const de: Record<string, LocalizedDestinationPatch> = {
             'Inklusive Madrisquí, Francisquí und einem Schnorchelausflug nach La Virgen (einmal pro Person, mit Erinnerungsvideo)',
             'Strand-Kit: Kühlbox mit Mittagessen, Eisbox, Sonnenschirm, Stühle, täglich frische Handtücher, Wasser, Erfrischungsgetränke, Obst und Snacks',
             'Geschenk: ein Sixpack Bier (Zulia oder Polar Light Dosen)',
+          ],
+        },
+        {
+          name: 'Basis-Plan',
+          price: 'USD 135',
+          unit: 'pro Person × Nacht',
+          childRate:
+            'USD 90 × Nacht (Alter 4–16; Ausflug zu den Cays nicht inbegriffen; -15% OFF auf nahegelegene Cays, wenn Erwachsene diese bereits gebucht haben)',
+          includes: [
+            'Vollpension mit Willkommensgetränk (kein Frühstück am Ankunftstag oder Mittagessen am Abreisetag)',
+            'Ausflug nach Madrisquí und Francisquí mit sicherem Transfer',
+            'Strand-Kit: Kühlbox mit Mittagessen, Eisbox, Zelte, Stühle, Handtücher, Wasser, Erfrischungsgetränke, Obst, Snacks und Schnorchelausrüstung',
           ],
         },
       ],

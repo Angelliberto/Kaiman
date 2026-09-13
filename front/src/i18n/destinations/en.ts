@@ -162,18 +162,6 @@ export const en: Record<string, LocalizedDestinationPatch> = {
       highlight: '-15% OFF on the Premium plan',
       packages: [
         {
-          name: 'Basic Plan',
-          price: 'USD 135',
-          unit: 'per person × night',
-          childRate:
-            'USD 90 × night (ages 4–16; cay trip not included; 15% OFF nearby cays if adults already booked them)',
-          includes: [
-            'Full board with welcome drink (no breakfast on arrival day or lunch on departure day)',
-            'Excursion to Madrisquí and Francisquí, with safe transfer',
-            'Beach kit: cooler with lunch, ice box, tents, chairs, towels, water, soft drinks, fruit, snacks and snorkel gear',
-          ],
-        },
-        {
           name: 'Premium Plan',
           price: 'USD 155',
           unit: 'per person × night',
@@ -185,6 +173,18 @@ export const en: Record<string, LocalizedDestinationPatch> = {
             'Includes Madrisquí, Francisquí and one snorkeling outing to La Virgen (once per person, with keepsake video)',
             'Beach kit: cooler with lunch, ice box, umbrella, chairs, towels refreshed daily, water, soft drinks, fruit and snacks',
             'Gift of a six-pack of beer (Zulia or Polar Light cans)',
+          ],
+        },
+        {
+          name: 'Basic Plan',
+          price: 'USD 135',
+          unit: 'per person × night',
+          childRate:
+            'USD 90 × night (ages 4–16; cay trip not included; 15% OFF nearby cays if adults already booked them)',
+          includes: [
+            'Full board with welcome drink (no breakfast on arrival day or lunch on departure day)',
+            'Excursion to Madrisquí and Francisquí, with safe transfer',
+            'Beach kit: cooler with lunch, ice box, tents, chairs, towels, water, soft drinks, fruit, snacks and snorkel gear',
           ],
         },
       ],

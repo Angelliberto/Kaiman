@@ -162,18 +162,6 @@ export const it: Record<string, LocalizedDestinationPatch> = {
       highlight: '-15% OFF sul piano Premium',
       packages: [
         {
-          name: 'Piano Base',
-          price: 'USD 135',
-          unit: 'per persona × notte',
-          childRate:
-            'USD 90 × notte (età 4–16; escursione ai cay non inclusa; -15% OFF sui cay vicini se gli adulti li hanno già prenotati)',
-          includes: [
-            'Pensione completa con drink di benvenuto (niente colazione il giorno di arrivo né pranzo il giorno di partenza)',
-            'Escursione a Madrisquí e Francisquí, con trasferimento sicuro',
-            'Kit da spiaggia: borsa frigo con pranzo, ghiacciaia, tende, sedie, asciugamani, acqua, bibite, frutta, snack e attrezzatura da snorkeling',
-          ],
-        },
-        {
           name: 'Piano Premium',
           price: 'USD 155',
           unit: 'per persona × notte',
@@ -185,6 +173,18 @@ export const it: Record<string, LocalizedDestinationPatch> = {
             'Include Madrisquí, Francisquí e un’uscita di snorkeling a La Virgen (una volta per persona, con video ricordo)',
             'Kit da spiaggia: borsa frigo con pranzo, ghiacciaia, ombrellone, sedie, asciugamani rinnovati ogni giorno, acqua, bibite, frutta e snack',
             'In omaggio una confezione da sei birre (lattine Zulia o Polar Light cans)',
+          ],
+        },
+        {
+          name: 'Piano Base',
+          price: 'USD 135',
+          unit: 'per persona × notte',
+          childRate:
+            'USD 90 × notte (età 4–16; escursione ai cay non inclusa; -15% OFF sui cay vicini se gli adulti li hanno già prenotati)',
+          includes: [
+            'Pensione completa con drink di benvenuto (niente colazione il giorno di arrivo né pranzo il giorno di partenza)',
+            'Escursione a Madrisquí e Francisquí, con trasferimento sicuro',
+            'Kit da spiaggia: borsa frigo con pranzo, ghiacciaia, tende, sedie, asciugamani, acqua, bibite, frutta, snack e attrezzatura da snorkeling',
           ],
         },
       ],

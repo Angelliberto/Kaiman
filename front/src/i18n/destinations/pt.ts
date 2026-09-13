@@ -162,18 +162,6 @@ export const pt: Record<string, LocalizedDestinationPatch> = {
       highlight: '-15% OFF no plano Premium',
       packages: [
         {
-          name: 'Plano Básico',
-          price: 'USD 135',
-          unit: 'por pessoa × noite',
-          childRate:
-            'USD 90 × noite (4–16 anos; passeio aos cayos não incluído; 15% OFF nos cayos próximos se os adultos já os reservaram)',
-          includes: [
-            'Pensão completa com drink de boas-vindas (sem café da manhã no dia da chegada ou almoço no dia da partida)',
-            'Excursão a Madrisquí e Francisquí, com traslado seguro',
-            'Kit de praia: cooler com almoço, caixa de gelo, barracas, cadeiras, toalhas, água, refrigerantes, frutas, lanches e equipamento de snorkel',
-          ],
-        },
-        {
           name: 'Plano Premium',
           price: 'USD 155',
           unit: 'por pessoa × noite',
@@ -185,6 +173,18 @@ export const pt: Record<string, LocalizedDestinationPatch> = {
             'Inclui Madrisquí, Francisquí e um passeio de snorkeling em La Virgen (uma vez por pessoa, com vídeo de recordação)',
             'Kit de praia: cooler com almoço, caixa de gelo, guarda-sol, cadeiras, toalhas renovadas diariamente, água, refrigerantes, frutas e lanches',
             'Presente de um pack de seis cervejas (latas Zulia ou Polar Light)',
+          ],
+        },
+        {
+          name: 'Plano Básico',
+          price: 'USD 135',
+          unit: 'por pessoa × noite',
+          childRate:
+            'USD 90 × noite (4–16 anos; passeio aos cayos não incluído; 15% OFF nos cayos próximos se os adultos já os reservaram)',
+          includes: [
+            'Pensão completa com drink de boas-vindas (sem café da manhã no dia da chegada ou almoço no dia da partida)',
+            'Excursão a Madrisquí e Francisquí, com traslado seguro',
+            'Kit de praia: cooler com almoço, caixa de gelo, barracas, cadeiras, toalhas, água, refrigerantes, frutas, lanches e equipamento de snorkel',
           ],
         },
       ],

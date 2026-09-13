@@ -162,18 +162,6 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
       highlight: '-15% OFF sur le plan Premium',
       packages: [
         {
-          name: 'Plan Basique',
-          price: 'USD 135',
-          unit: 'par personne × nuit',
-          childRate:
-            'USD 90 × nuit (de 4 à 16 ans ; excursion aux cayes non incluse ; 15 % de réduction sur les cayes voisines si les adultes les ont déjà réservées)',
-          includes: [
-            'Pension complète avec verre de bienvenue (pas de petit-déjeuner le jour de l’arrivée ni de déjeuner le jour du départ)',
-            'Excursion à Madrisquí et Francisquí, avec transfert sécurisé',
-            'Kit de plage : glacière avec déjeuner, bac à glaçons, tentes, chaises, serviettes, eau, boissons non alcoolisées, fruits, collations et équipement de plongée avec tuba',
-          ],
-        },
-        {
           name: 'Plan Premium',
           price: 'USD 155',
           unit: 'par personne × nuit',
@@ -185,6 +173,18 @@ export const fr: Record<string, LocalizedDestinationPatch> = {
             'Comprend Madrisquí, Francisquí et une sortie snorkeling à La Virgen (une fois par personne, avec vidéo souvenir)',
             'Kit de plage : glacière avec déjeuner, bac à glaçons, parasol, chaises, serviettes rafraîchies quotidiennement, eau, boissons non alcoolisées, fruits et collations',
             'Cadeau d’un pack de six bières (canettes Zulia ou Polar Light)',
+          ],
+        },
+        {
+          name: 'Plan Basique',
+          price: 'USD 135',
+          unit: 'par personne × nuit',
+          childRate:
+            'USD 90 × nuit (de 4 à 16 ans ; excursion aux cayes non incluse ; 15 % de réduction sur les cayes voisines si les adultes les ont déjà réservées)',
+          includes: [
+            'Pension complète avec verre de bienvenue (pas de petit-déjeuner le jour de l’arrivée ni de déjeuner le jour du départ)',
+            'Excursion à Madrisquí et Francisquí, avec transfert sécurisé',
+            'Kit de plage : glacière avec déjeuner, bac à glaçons, tentes, chaises, serviettes, eau, boissons non alcoolisées, fruits, collations et équipement de plongée avec tuba',
           ],
         },
       ],
