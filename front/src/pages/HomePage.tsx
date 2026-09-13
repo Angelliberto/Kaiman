@@ -6,6 +6,7 @@ import { ImageCarousel } from '../components/ImageCarousel';
 import { localizeDestinations } from '../i18n/destinationsContent';
 import { useI18n } from '../i18n/LanguageContext';
 import type { Destination, SiteInfo } from '../types';
+import { getDestinationCoverImage } from '../utils/destinationHelpers';
 
 export function HomePage() {
   const { t, lang } = useI18n();
@@ -48,11 +49,12 @@ export function HomePage() {
     });
   }, [location.hash]);
 
+  // One cover per destination — never dump entire galleries into the hero.
   const heroImages = useMemo(
     () =>
-      destinations.flatMap((destination) =>
-        destination.images?.length ? destination.images : [destination.imageUrl]
-      ),
+      destinations
+        .map((destination) => getDestinationCoverImage(destination))
+        .filter((src): src is string => Boolean(src)),
     [destinations]
   );
 

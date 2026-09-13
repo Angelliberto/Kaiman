@@ -15,7 +15,7 @@ import { useContact } from '../context/ContactContext';
 import { useI18n } from '../i18n/LanguageContext';
 import { localizeDestination, localizeDestinations } from '../i18n/destinationsContent';
 import type { Destination, DestinationOffer, HostListing, TourDeparture } from '../types';
-import { preloadDestinationImages } from '../utils/destinationHelpers';
+import { preloadDestinationCovers } from '../utils/destinationHelpers';
 
 type Filter = 'all' | 'available';
 
@@ -53,7 +53,7 @@ export function DestinationPage() {
     fetchDestinations()
       .then((items) => {
         setDestinations(items);
-        preloadDestinationImages(items);
+        preloadDestinationCovers(items);
       })
       .catch(() => {
         /* La barra se oculta si no hay datos */

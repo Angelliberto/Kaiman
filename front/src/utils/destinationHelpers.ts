@@ -6,11 +6,24 @@ export const getDestinationImages = (destination: Destination): string[] => {
   return [];
 };
 
-export const preloadDestinationImages = (destinations: Destination[]): void => {
+/** Cover / first image only — used for heroes and light previews. */
+export const getDestinationCoverImage = (destination: Destination): string | null => {
+  if (destination.images?.length) return destination.images[0];
+  if (destination.imageUrl) return destination.imageUrl;
+  return null;
+};
+
+/**
+ * Warm the browser cache with only the first image of each destination.
+ * Avoids downloading entire galleries on mobile.
+ */
+export const preloadDestinationCovers = (destinations: Destination[]): void => {
   destinations.forEach((destination) => {
-    getDestinationImages(destination).forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    const cover = getDestinationCoverImage(destination);
+    if (!cover || cover.startsWith('http')) return;
+
+    const img = new Image();
+    img.decoding = 'async';
+    img.src = cover;
   });
 };

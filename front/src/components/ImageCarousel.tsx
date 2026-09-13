@@ -23,11 +23,19 @@ const shuffle = <T,>(items: T[]): T[] => {
   return copy;
 };
 
-const preloadImages = (sources: string[]) => {
-  sources.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
+/** Only keep the slides needed for crossfade + one lookahead. */
+const getVisibleSlideIndexes = (
+  activeIndex: number,
+  leavingIndex: number | null,
+  total: number
+): number[] => {
+  if (total <= 0) return [];
+
+  const indexes = new Set<number>([activeIndex]);
+  if (leavingIndex !== null) indexes.add(leavingIndex);
+  if (total > 1) indexes.add((activeIndex + 1) % total);
+
+  return [...indexes];
 };
 
 export function ImageCarousel({
@@ -78,14 +86,12 @@ export function ImageCarousel({
     isFirstRender.current = true;
     setMotionReady(false);
 
-    preloadImages(slides);
-
     const frame = requestAnimationFrame(() => {
       requestAnimationFrame(() => setMotionReady(true));
     });
 
     return () => cancelAnimationFrame(frame);
-  }, [slidesKey, slides]);
+  }, [slidesKey]);
 
   useEffect(() => {
     if (prevIndex === null) return;
@@ -111,6 +117,11 @@ export function ImageCarousel({
     return () => window.clearInterval(timer);
   }, [paused, slides.length, intervalMs, slidesKey]);
 
+  const visibleIndexes = useMemo(
+    () => getVisibleSlideIndexes(index, prevIndex, slides.length),
+    [index, prevIndex, slides.length]
+  );
+
   if (slides.length === 0) {
     return <div className={`image-carousel empty ${className}`} aria-hidden />;
   }
@@ -132,7 +143,8 @@ export function ImageCarousel({
         </button>
       )}
 
-      {slides.map((src, slideIndex) => {
+      {visibleIndexes.map((slideIndex) => {
+        const src = slides[slideIndex];
         const isActive = slideIndex === index;
         const isLeaving = slideIndex === prevIndex;
         const isFirst = isActive && isFirstRender.current;
@@ -153,6 +165,9 @@ export function ImageCarousel({
             alt={`${alt} ${slideIndex + 1}`}
             className={classNames}
             decoding="async"
+            loading={isActive || isLeaving ? 'eager' : 'lazy'}
+            fetchPriority={isActive ? 'high' : 'low'}
+            draggable={false}
           />
         );
       })}

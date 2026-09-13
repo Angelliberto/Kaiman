@@ -130,7 +130,7 @@ export function ImageGallery({
             {index + 1} / {images.length}
           </span>
 
-          {images.length > 1 && (
+          {images.length > 1 && images.length <= 12 && (
             <div className="image-gallery-thumbs" role="tablist" aria-label="Miniaturas">
               {images.map((src, thumbIndex) => (
                 <button
@@ -142,7 +142,13 @@ export function ImageGallery({
                   aria-selected={thumbIndex === index}
                   onClick={() => setIndex(thumbIndex)}
                 >
-                  <img src={src} alt="" loading="lazy" decoding="async" />
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                  />
                 </button>
               ))}
             </div>

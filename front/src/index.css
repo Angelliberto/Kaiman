@@ -997,13 +997,13 @@ a { color: inherit; text-decoration: none; }
   transform: scale(1.05);
   transition: opacity 0.9s ease, transform 6s ease;
   z-index: 0;
-  will-change: opacity, transform;
 }
 
 .image-carousel img.is-active {
   opacity: 1;
   transform: scale(1);
   z-index: 2;
+  will-change: opacity, transform;
 }
 
 .image-carousel img.is-active.is-first {
@@ -1302,6 +1302,28 @@ a { color: inherit; text-decoration: none; }
   padding: 0.35rem;
   overflow-x: auto;
   scrollbar-width: thin;
+}
+
+@media (max-width: 768px) {
+  .image-gallery-thumbs {
+    display: none;
+  }
+
+  .topbar,
+  .carousel-gallery-trigger,
+  .image-gallery-close,
+  .destinations-showcase-nav {
+    backdrop-filter: none;
+  }
+
+  .image-carousel img.is-active {
+    will-change: auto;
+  }
+
+  .image-carousel img.is-active.is-first,
+  .image-carousel img.is-active:not(.is-first) {
+    transition: opacity 0.55s ease, transform 0s;
+  }
 }
 
 .image-gallery-thumb {
@@ -1861,13 +1883,18 @@ a { color: inherit; text-decoration: none; }
 
   .brand {
     min-height: 0;
+    height: 48px;
+    max-width: min(46vw, 150px);
     flex-shrink: 0;
-    max-width: min(58vw, 220px);
+    align-self: center;
+    overflow: visible;
+    line-height: 0;
   }
 
   .brand-logo {
     --logo-height: 58px;
     --logo-scale: 2.55;
+    pointer-events: none;
   }
 
   .topbar-nav-wrap {
@@ -1958,12 +1985,14 @@ a { color: inherit; text-decoration: none; }
   }
 
   .brand {
-    max-width: min(55vw, 200px);
+    height: 44px;
+    max-width: min(42vw, 140px);
   }
 
   .brand-logo {
     --logo-height: 56px;
     --logo-scale: 2.45;
+    pointer-events: none;
   }
 
   .nav-label-full {

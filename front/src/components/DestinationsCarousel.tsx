@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { DestinationShowcase } from './DestinationShowcase';
 import type { Destination } from '../types';
-import { preloadDestinationImages } from '../utils/destinationHelpers';
+import { preloadDestinationCovers } from '../utils/destinationHelpers';
 
 interface DestinationsCarouselProps {
   destinations: Destination[];
@@ -12,7 +12,7 @@ export function DestinationsCarousel({ destinations }: DestinationsCarouselProps
   const activeDestination = destinations[activeIndex];
 
   useEffect(() => {
-    preloadDestinationImages(destinations);
+    preloadDestinationCovers(destinations);
   }, [destinations]);
 
   if (!activeDestination) {
