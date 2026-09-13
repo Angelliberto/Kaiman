@@ -17,10 +17,13 @@ COPY back/package.json back/package-lock.json ./
 RUN npm ci --omit=dev
 
 COPY --from=builder /app/back/dist ./dist
-COPY back/destinations.json back/listings.json ./
+COPY back/destinations.json back/listings.json back/tour-departures.json ./
 COPY front/public/images ./images
 
 ENV DESTINATION_IMAGES_DIR=/app/images
+# Sobrescribe en Koyeb con la URL pública del servicio, p.ej. https://xxx.koyeb.app
+# ENV PUBLIC_URL=https://tu-api.koyeb.app
+ENV PORT=3000
 
 EXPOSE 3000
 

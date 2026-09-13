@@ -48,9 +48,14 @@ const IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.g
 const DESTINATIONS_PATH =
   process.env.DESTINATIONS_FILE ?? resolve(process.cwd(), 'destinations.json');
 
-const IMAGES_ROOT =
+export const IMAGES_ROOT =
   process.env.DESTINATION_IMAGES_DIR ??
   resolve(process.cwd(), '../front/public/images');
+
+/** Base pública del API (Koyeb). Si está definida, las fotos locales salen como URL absoluta. */
+const IMAGE_PUBLIC_BASE = (process.env.PUBLIC_URL ?? process.env.IMAGE_PUBLIC_BASE ?? '')
+  .trim()
+  .replace(/\/$/, '');
 
 let cachedRawDestinations: Destination[] | null = null;
 
@@ -67,7 +72,10 @@ const listLocalImages = (destinationId: string): string[] => {
       return IMAGE_EXTENSIONS.has(extname(file).toLowerCase());
     })
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-    .map((file) => `/images/${destinationId}/${file}`);
+    .map((file) => {
+      const path = `/images/${destinationId}/${file}`;
+      return IMAGE_PUBLIC_BASE ? `${IMAGE_PUBLIC_BASE}${path}` : path;
+    });
 };
 
 const enrichDestination = (destination: Destination): Destination => {
